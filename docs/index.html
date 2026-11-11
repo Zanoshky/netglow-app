@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Netglow</title>
+<meta name="description" content="User guide for Netglow, an Android Wi-Fi scanner with names that stay and a camera check that says what it cannot see.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Netglow">
+<meta property="og:description" content="User guide for Netglow, an Android Wi-Fi scanner with names that stay and a camera check that says what it cannot see.">
+<meta property="og:image" content="img/network.webp">
+<link rel="icon" type="image/png" href="img/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <a class="brand" href="index.html"><img src="img/icon-192.png" alt="" width="30" height="30"><span>netglow</span></a>
+  <nav class="nav" aria-label="Guide pages"><ul><li><a href="index.html" aria-current="page"><span class="ws" aria-hidden="true">1</span>home</a></li><li><a href="guide.html"><span class="ws" aria-hidden="true">2</span>guide</a></li><li><a href="cookbook.html"><span class="ws" aria-hidden="true">3</span>cookbook</a></li><li><a href="runbook.html"><span class="ws" aria-hidden="true">4</span>runbook</a></li><li><a href="faq.html"><span class="ws" aria-hidden="true">5</span>faq</a></li><li><a href="report.html"><span class="ws" aria-hidden="true">6</span>report a bug</a></li></ul></nav>
+</header>
+<div class="wrap">
+<main id="main">
+
+<section class="hero" aria-labelledby="hero-h">
+  <div class="tile">
+    <div class="title" aria-hidden="true">user guide</div>
+    <h1 id="hero-h">netglow</h1>
+    <div class="underline" aria-hidden="true"></div>
+    <p class="lede">See who is on your Wi-Fi, give devices names that stay, and run a camera check that tells you what it cannot see. Scans are free and unlimited, with no account and no ads.</p>
+    <p class="dim">This is the user guide, and the place to report bugs and ask for features. The app itself is on Google Play.</p>
+    <div class="actions">
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.zanoshky.netglow">Get it on Google Play</a>
+      <a class="btn ghost" href="guide.html">Read the guide</a>
+      <a class="btn ghost" href="cookbook.html">Try a recipe</a>
+    </div>
+  </div>
+  <div class="phone"><img src="img/network.webp" width="540" height="1200" alt="The Netglow Network screen after a scan: 5 devices now, 0 new today, 0 cameras, then the Everything Netglow does grid with Camera check, App traffic, Ping, Traceroute, Port check, DNS lookup, Wake on LAN, Wi-Fi channels, Network info and Router check, and the bottom bar Network, Cameras, Apps, Tools, Settings."></div>
+</section>
+<ul class="chips" aria-label="Netglow promises"><li>No ads</li><li>No account</li><li>No analytics</li><li>No subscription</li></ul>
+<section class="tile" id="features" aria-labelledby="features-h"><div class="title" aria-hidden="true">what it does</div><h2 id="features-h">What Netglow does</h2>
+<div class="tiles"><div class="tile quiet"><h3>Who is on my Wi-Fi</h3><p>One scan asks the network in several ways at once: ping, mDNS, UPnP, NetBIOS and WS-Discovery, plus a short port check. Each device shows its name, maker and model when it says them, its address, and how it was found.</p></div><div class="tile quiet"><h3>Names that stay</h3><p>Give a device your own name. Netglow knows it again by what it says about itself, even on a new address. A history shows when each device was online and what joined today.</p></div><div class="tile quiet"><h3>A names file you keep</h3><p>Every device, every name it gave itself and every rename you made is saved in a plain devices.json file, in a folder you pick. Remove the app or change phones, and your names come back from it.</p></div><div class="tile quiet"><h3>Camera check</h3><p>Lists devices on your Wi-Fi that answer as a camera or have video stream ports open, and says why each one was flagged. It also looks for camera hotspots nearby. It tells you plainly what it cannot see.</p></div><div class="tile quiet"><h3>Network tools</h3><p>Ping, traceroute, port check, DNS lookup with every record type and Wake on LAN. Your address, gateway, DNS and subnet. A router check, and how crowded each Wi-Fi channel is around you.</p></div><div class="tile quiet"><h3>Shizuku mode</h3><p>With the free Shizuku app running, Netglow reads the hardware address of every device on your Wi-Fi, so makers show and devices that ignore ping are found too.</p></div><div class="tile quiet"><h3>Your apps, with Firewall</h3><p>With Firewall, our free firewall app, Netglow shows which servers each app on this phone talks to. Block an app there and watch its connections stop, or block it with Shizuku mode (Pro).</p></div><div class="tile quiet"><h3>Made to be easy to read</h3><p>Big touch targets, strong contrast, text that grows to 200 percent, and two columns on a tablet.</p></div></div>
+<p><a href="guide.html">Read the whole guide</a> · <a href="cookbook.html">Short recipes</a> · <a href="runbook.html">Something not working?</a></p>
+</section>
+<section class="tile" id="screens" aria-labelledby="screens-h"><div class="title" aria-hidden="true">screens</div><h2 id="screens-h">A few screens</h2>
+<div class="shots-wrap"><ul class="shots">
+<li><figure><div class="phone"><img src="img/device.webp" width="540" height="1200" loading="lazy" alt="A device page named Router: buttons Rename, Open web page, Ping and Ports, then what it says about itself: address, found by, hardware address and first seen, and a list of open ports."></div><figcaption>A device page: rename it, ping it, check its ports.</figcaption></figure></li>
+<li><figure><div class="phone"><img src="img/timeline.webp" width="540" height="1200" loading="lazy" alt="The Timeline page: a Watch in the background button, then Today, hour by hour, with a row of lit squares for the Router and three unknown devices, and a note that no one joined or left yet."></div><figcaption>The timeline of who joined and who left.</figcaption></figure></li>
+<li><figure><div class="phone"><img src="img/shizuku.webp" width="540" height="1200" loading="lazy" alt="The Shizuku mode page: what it adds (the maker of every device, free, and block an app with no VPN, Pro), a card saying Shizuku mode is on, a Scan now button and the list Blocked with Shizuku."></div><figcaption>Shizuku mode: makers for every device.</figcaption></figure></li>
+</ul></div>
+</section>
+<section class="tile" id="pro" aria-labelledby="pro-h"><div class="title" aria-hidden="true">pro</div><h2 id="pro-h">Pro, paid once</h2>
+<p>Scans, names, the camera check and every tool are free. Pro is an optional extra, a one time payment on Google Play, with no subscription.</p>
+<dl class="keys"><dt>Background watch</dt><dd>A timeline of who joined your Wi-Fi and who left, hour by hour, and a note when something new joins. Checked every 15 minutes, or as often as you set.</dd><dt>History for good</dt><dd>Every scan and every day a device was online, kept for good, not just 30 days.</dd><dt>Several networks</dt><dd>Home, office and family, each with its own devices, to browse while you are away.</dd><dt>Deep port check</dt><dd>Up to 1000 ports, or a range you type, on any device.</dd><dt>Block with Shizuku</dt><dd>Cut one app off the network in Android's own firewall, with no VPN, on Android 14 and up with the free Shizuku app.</dd><dt>Export</dt><dd>Your devices as a CSV or JSON file, for a sheet or a backup.</dd><dt>Widget</dt><dd>Devices online and new ones, on your home screen, with a Scan key.</dd></dl>
+</section>
+<section class="tile quiet" id="private" aria-labelledby="private-h"><div class="title" aria-hidden="true">private</div><h2 id="private-h">Private by design</h2>
+<ul class="dots"><li>No account and no sign in.</li><li>No ads and no advertising identifiers.</li><li>No analytics or tracking libraries.</li><li>Nothing you scan or name is sent to us. There is no server of ours.</li><li>No selling or sharing of data, because we do not collect any.</li></ul>
+<p>Use Netglow on networks you own or may test.</p>
+</section>
+
+</main>
+<footer>
+  <div class="tile quiet">
+  <ul>
+    <li><a href="https://play.google.com/store/apps/details?id=com.zanoshky.netglow">Google Play</a></li>
+    <li><a href="https://netglow.zanoski.com">netglow.zanoski.com</a></li>
+    <li><a href="https://github.com/Zanoshky/netglow-app/issues">Issues</a></li>
+    <li><a href="https://github.com/Zanoshky/netglow-app/blob/main/LICENSE">License</a></li>
+  </ul>
+  <p>Guide text and images are shared under CC BY 4.0. The Netglow app itself is proprietary. Made by Marko Zanoski.</p>
+  </div>
+</footer>
+</div>
+</body>
+</html>

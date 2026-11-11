@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: User guide
+    url: https://zanoshky.github.io/netglow-app/
+    about: Every screen, recipes and answers to common questions.
+  - name: netglow.zanoski.com
+    url: https://netglow.zanoski.com
+    about: The Netglow website, with the privacy policy and contact details.

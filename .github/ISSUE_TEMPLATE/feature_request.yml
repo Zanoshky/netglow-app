@@ -1,0 +1,56 @@
+name: Feature request
+description: An idea for something Netglow could do.
+title: "[idea] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What you want
+      description: Describe the feature in a few lines.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why
+      description: What would it help you do? A real example helps.
+    validations:
+      required: true
+  - type: dropdown
+    id: where
+    attributes:
+      label: "Which screen?"
+      options:
+        - Network
+        - Cameras / Camera check
+        - Apps
+        - Tools: Ping
+        - Tools: Traceroute
+        - Tools: Port check
+        - Tools: DNS lookup
+        - Tools: Wake on LAN
+        - Tools: Wi-Fi channels
+        - Tools: Network info
+        - Tools: Router check
+        - Settings
+        - Names file (devices.json)
+        - Timeline
+        - Shizuku mode
+        - Pro
+        - Widget
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: media
+    attributes:
+      label: Pictures or links
+      description: A sketch, a screenshot or a link to something similar.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you send
+      options:
+        - label: I searched the open issues and this idea is not there yet.
+          required: true

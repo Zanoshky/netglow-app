@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cookbook · Netglow user guide</title>
+<meta name="description" content="Short Netglow recipes, a few taps each: find who is on your Wi-Fi, rename devices, keep a names file, check for cameras, block an app, watch the network.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Cookbook · Netglow user guide">
+<meta property="og:description" content="Short Netglow recipes, a few taps each: find who is on your Wi-Fi, rename devices, keep a names file, check for cameras, block an app, watch the network.">
+<meta property="og:image" content="img/network.webp">
+<link rel="icon" type="image/png" href="img/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <a class="brand" href="index.html"><img src="img/icon-192.png" alt="" width="30" height="30"><span>netglow</span></a>
+  <nav class="nav" aria-label="Guide pages"><ul><li><a href="index.html"><span class="ws" aria-hidden="true">1</span>home</a></li><li><a href="guide.html"><span class="ws" aria-hidden="true">2</span>guide</a></li><li><a href="cookbook.html" aria-current="page"><span class="ws" aria-hidden="true">3</span>cookbook</a></li><li><a href="runbook.html"><span class="ws" aria-hidden="true">4</span>runbook</a></li><li><a href="faq.html"><span class="ws" aria-hidden="true">5</span>faq</a></li><li><a href="report.html"><span class="ws" aria-hidden="true">6</span>report a bug</a></li></ul></nav>
+</header>
+<div class="wrap">
+<main id="main">
+
+<div class="eyebrow">~/cookbook</div>
+<h1>Cookbook</h1>
+<div class="underline" aria-hidden="true"></div>
+<p class="lede">Short recipes, a few taps each. Bottom bar names are in code style.</p>
+<div class="tiles"><section class="tile" id="who" aria-labelledby="who-h"><div class="title" aria-hidden="true">recipe</div><h2 id="who-h">Find who is on my Wi-Fi</h2>
+<ol class="steps"><li>Join the Wi-Fi.</li><li>Open <code>Network</code> and tap <code>Scan</code>.</li><li>Read <code>Devices now</code> and <code>New today</code>. Tap <code>See all</code> for the full list.</li></ol><p>Missing one? Wake it and scan again, or tap <code>Why a device may be missing</code>.</p>
+</section>
+<section class="tile" id="rename" aria-labelledby="rename-h"><div class="title" aria-hidden="true">recipe</div><h2 id="rename-h">Rename a device</h2>
+<ol class="steps"><li>Open <code>Network</code> and tap the device.</li><li>Tap <code>Rename</code>, type a name and tap <code>Save</code>.</li></ol><p>Netglow knows it again by what it says about itself, even on a new address. Leave the name empty to give back its own name.</p>
+</section>
+<section class="tile" id="keep" aria-labelledby="keep-h"><div class="title" aria-hidden="true">recipe</div><h2 id="keep-h">Keep my names safe with a names file</h2>
+<ol class="steps"><li>Open <code>Settings</code>, then <code>Device names file</code>.</li><li>Under <code>Where it is saved</code> tap <code>Folder</code> and pick a folder.</li></ol><p>devices.json is saved there after every scan and rename, and stays when Netglow is removed.</p>
+</section>
+<section class="tile" id="load" aria-labelledby="load-h"><div class="title" aria-hidden="true">recipe</div><h2 id="load-h">Load my names on a new phone</h2>
+<ol class="steps"><li>Install Netglow and copy devices.json to the new phone.</li><li>Open <code>Settings</code>, <code>Device names file</code>, then <code>Load a file</code>.</li><li>Pick devices.json. Netglow says how many devices it loaded.</li></ol><p>If you picked a folder before, the file is already there. Pick the same folder again with <code>Folder</code>, then load it.</p>
+</section>
+<section class="tile" id="rental" aria-labelledby="rental-h"><div class="title" aria-hidden="true">recipe</div><h2 id="rental-h">Check a rental for cameras</h2>
+<ol class="steps"><li>Join the rental's Wi-Fi.</li><li>Open <code>Cameras</code> and tap <code>Check again</code>.</li><li>Tap <code>Check nearby Wi-Fi too</code> and allow location, to see camera hotspots nearby.</li><li>Read each find. It says why it was flagged.</li></ol><p>Netglow cannot see cameras that record to a card or use mobile data, or anything when the Wi-Fi keeps guests apart. A clean result is not a promise. Look around the room too.</p>
+</section>
+<section class="tile" id="fwblock" aria-labelledby="fwblock-h"><div class="title" aria-hidden="true">recipe</div><h2 id="fwblock-h">Block an app with Firewall</h2>
+<ol class="steps"><li>Install Firewall from Google Play and turn it on.</li><li>Open <code>Apps</code> and tap the app.</li><li>Tap <code>Block in Firewall</code>.</li></ol><p>The page then shows each connection, red when stopped and blue when it went out. If Apps says <code>Another VPN may be on</code>, see the <a href="runbook.html#vpn">runbook</a>.</p>
+</section>
+<section class="tile" id="szblock" aria-labelledby="szblock-h"><div class="title" aria-hidden="true">recipe</div><h2 id="szblock-h">Block an app with Shizuku (Pro)</h2>
+<ol class="steps"><li>Turn on Shizuku mode: <code>Settings</code>, <code>Shizuku mode</code>, then <code>Get Shizuku</code>, <code>Open Shizuku</code> and <code>Allow Netglow</code>.</li><li>Open <code>Apps</code> and tap the app.</li><li>Tap <code>Block with Shizuku</code>.</li><li>To undo, tap <code>Let it out again</code>.</li></ol><p>It needs Android 14 or newer. There is no VPN. After a reboot, start Shizuku again and Netglow sets the block again.</p>
+</section>
+<section class="tile" id="watch" aria-labelledby="watch-h"><div class="title" aria-hidden="true">recipe</div><h2 id="watch-h">Turn on Background watch (Pro)</h2>
+<ol class="steps"><li>Open <code>Settings</code>, then <code>Background watch</code>.</li><li>Turn on <code>Watch in the background</code>.</li><li>Tap <code>How often</code> to pick 15 minutes up to 6 hours, and keep <code>Note for new devices</code> on.</li></ol><p>Netglow checks only while the phone is on Wi-Fi. Allow notifications when Android asks.</p>
+</section>
+<section class="tile" id="today" aria-labelledby="today-h"><div class="title" aria-hidden="true">recipe</div><h2 id="today-h">See who joined today</h2>
+<ol class="steps"><li>Look at <code>New today</code> on <code>Network</code>.</li><li>For more, tap <code>Timeline</code> in <code>Everything Netglow does</code>.</li><li>Read <code>Today, hour by hour</code> and the joins and leaves below it.</li></ol><p>If a device is yours, open it and tap <code>It is mine</code> so alerts skip it.</p>
+</section>
+<section class="tile" id="ping" aria-labelledby="ping-h"><div class="title" aria-hidden="true">recipe</div><h2 id="ping-h">Ping a device</h2>
+<ol class="steps"><li>Tap the device, then <code>Ping</code>.</li><li>Tap <code>Run</code>. Netglow sends 10 pings and gives the average time.</li></ol><p>Or open <code>Tools</code>, <code>Ping</code>, and type a name or address.</p>
+</section>
+<section class="tile" id="ports" aria-labelledby="ports-h"><div class="title" aria-hidden="true">recipe</div><h2 id="ports-h">Check the ports of a device</h2>
+<ol class="steps"><li>Tap the device, then <code>Ports</code>.</li><li>Tap <code>Run</code>. You get the open ports, and what each is used for.</li></ol><p>With Pro, type ports after the address, like <code>192.168.1.1 22, 8000-8100</code>, up to 1000.</p>
+</section>
+<section class="tile" id="wake" aria-labelledby="wake-h"><div class="title" aria-hidden="true">recipe</div><h2 id="wake-h">Wake a PC</h2>
+<ol class="steps"><li>Turn on Wake on LAN in the computer's settings. Use a cable, or set it to wake by Wi-Fi.</li><li>Tap the PC in Netglow, then <code>Wake on LAN</code>.</li><li>Type its hardware address once, tap <code>Save</code> and Netglow sends the packet.</li></ol><p>Nothing answers back. Give the PC a minute, then ping it.</p>
+</section>
+<section class="tile" id="channel" aria-labelledby="channel-h"><div class="title" aria-hidden="true">recipe</div><h2 id="channel-h">Pick a clear Wi-Fi channel</h2>
+<ol class="steps"><li>Open <code>Tools</code>, then <code>Wi-Fi channels</code>. Allow location when asked.</li><li>Read how many networks sit on each channel and which one is clearest.</li></ol><p>Netglow only shows it. Change the channel in the router's settings.</p>
+</section>
+<section class="tile" id="router" aria-labelledby="router-h"><div class="title" aria-hidden="true">recipe</div><h2 id="router-h">Look at my router</h2>
+<ol class="steps"><li>Open <code>Tools</code>, then <code>Router check</code>.</li><li>Read each line. A line starting with "Look at this" needs attention.</li></ol><p>Nothing is changed. To remove a device from your Wi-Fi, change the Wi-Fi password in the router.</p>
+</section>
+<section class="tile" id="export" aria-labelledby="export-h"><div class="title" aria-hidden="true">recipe</div><h2 id="export-h">Export my devices (Pro)</h2>
+<ol class="steps"><li>Open <code>Settings</code>, then <code>Watch and history</code>.</li><li>Tap <code>Export devices</code> and pick CSV or JSON.</li></ol><p>No Pro? <code>Share file</code> on the names file page sends devices.json for free.</p>
+</section>
+<section class="tile" id="dark" aria-labelledby="dark-h"><div class="title" aria-hidden="true">recipe</div><h2 id="dark-h">Switch to a dark theme</h2>
+<ol class="steps"><li>Open <code>Settings</code>, then <code>Look</code>.</li><li>Tap <code>Dark</code> or <code>Black</code>.</li></ol>
+</section>
+</div>
+</main>
+<footer>
+  <div class="tile quiet">
+  <ul>
+    <li><a href="https://play.google.com/store/apps/details?id=com.zanoshky.netglow">Google Play</a></li>
+    <li><a href="https://netglow.zanoski.com">netglow.zanoski.com</a></li>
+    <li><a href="https://github.com/Zanoshky/netglow-app/issues">Issues</a></li>
+    <li><a href="https://github.com/Zanoshky/netglow-app/blob/main/LICENSE">License</a></li>
+  </ul>
+  <p>Guide text and images are shared under CC BY 4.0. The Netglow app itself is proprietary. Made by Marko Zanoski.</p>
+  </div>
+</footer>
+</div>
+</body>
+</html>

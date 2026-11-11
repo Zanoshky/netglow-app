@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ · Netglow user guide</title>
+<meta name="description" content="Quick answers about Netglow: price, Pro, camera check, Shizuku mode, devices.json, location and safety.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="FAQ · Netglow user guide">
+<meta property="og:description" content="Quick answers about Netglow: price, Pro, camera check, Shizuku mode, devices.json, location and safety.">
+<meta property="og:image" content="img/network.webp">
+<link rel="icon" type="image/png" href="img/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <a class="brand" href="index.html"><img src="img/icon-192.png" alt="" width="30" height="30"><span>netglow</span></a>
+  <nav class="nav" aria-label="Guide pages"><ul><li><a href="index.html"><span class="ws" aria-hidden="true">1</span>home</a></li><li><a href="guide.html"><span class="ws" aria-hidden="true">2</span>guide</a></li><li><a href="cookbook.html"><span class="ws" aria-hidden="true">3</span>cookbook</a></li><li><a href="runbook.html"><span class="ws" aria-hidden="true">4</span>runbook</a></li><li><a href="faq.html" aria-current="page"><span class="ws" aria-hidden="true">5</span>faq</a></li><li><a href="report.html"><span class="ws" aria-hidden="true">6</span>report a bug</a></li></ul></nav>
+</header>
+<div class="wrap">
+<main id="main">
+
+<div class="eyebrow">~/faq</div>
+<h1>FAQ</h1>
+<div class="underline" aria-hidden="true"></div>
+<p class="lede">Quick answers. Something broken? See the <a href="runbook.html">runbook</a>, or <a href="report.html">report it</a>.</p>
+<div class="tiles one"><section class="tile" id="questions" aria-labelledby="questions-h"><div class="title" aria-hidden="true">questions</div><h2 id="questions-h">Questions</h2>
+<details><summary>Is it really free?</summary><div><p>Yes. Scans are free and unlimited, with no account and no ads. The camera check, the names file and every tool are free too. Pro is an optional extra, paid once, and never needed to scan.</p></div></details><details><summary>What does Pro add?</summary><div><p>Background watch, history for good, several networks, a deep port check, blocking an app with Shizuku, export and a widget. It is one payment on Google Play, with no subscription.</p></div></details><details><summary>How does Background watch work?</summary><div><p>It is part of Pro and it is off until you turn it on. Every 15 minutes, or as often as you set, Netglow checks your Wi-Fi and builds a timeline of who joined and who left. When something new joins, you get a note.</p></div></details><details><summary>Does the camera check find every camera?</summary><div><p>No, and no app on a phone can. The camera check lists devices on your Wi-Fi that answer as a camera or have video stream ports open, and camera hotspots nearby. It cannot see cameras that only record to a card, use mobile data, are wired to something else or sit on another network. Use it as one check among others, for example in a holiday rental.</p></div></details><details><summary>Why does it not show every maker or address?</summary><div><p>Since Android 10, apps can no longer read the hardware (MAC) address of other devices. Netglow shows the maker and model when a device tells it, through mDNS, UPnP, NetBIOS or WS-Discovery. Some devices say nothing, and those show as unknown. With the free Shizuku app running, Netglow can read every hardware address again, so makers show for those too.</p></div></details><details><summary>Can it block a device on my Wi-Fi?</summary><div><p>No. Netglow cannot kick a device off your router. You can block an app on this phone with Firewall, our separate free app, or with Shizuku mode on Android 14 and up. Netglow runs no VPN of its own.</p></div></details><details><summary>What is Shizuku mode?</summary><div><p>Shizuku is a free app that lets other apps run a few commands with the rights a computer cable has. When you run it and allow Netglow, scans read every device's hardware address, and Pro can block an app in Android's own firewall. Android drops those blocks on every reboot; Netglow sets them again once Shizuku runs. Everything stays on your phone.</p></div></details><details><summary>What is the devices.json file?</summary><div><p>A plain text file with every device, every name it announced and every rename you made. Netglow saves it after each scan and rename, in a folder you pick once. After a reinstall or on a new phone, load it back and your names return.</p></div></details><details><summary>Why does it ask for location?</summary><div><p>Android requires location access before an app may read the Wi-Fi name and nearby Wi-Fi networks. Netglow uses it for those two things only. Everything else works if you say no.</p></div></details><details><summary>Is it safe to scan?</summary><div><p>Netglow only asks devices to announce themselves. It never tries passwords, never looks for weak spots and never reads other devices' traffic. Use it on networks you own or may test.</p></div></details><details><summary>Where do I report a bug?</summary><div><p>On the <a href="report.html">report page</a>. A free GitHub account is all you need, or write to <a href="mailto:zanoski.marko@gmail.com">zanoski.marko@gmail.com</a>.</p></div></details>
+</section>
+</div>
+</main>
+<footer>
+  <div class="tile quiet">
+  <ul>
+    <li><a href="https://play.google.com/store/apps/details?id=com.zanoshky.netglow">Google Play</a></li>
+    <li><a href="https://netglow.zanoski.com">netglow.zanoski.com</a></li>
+    <li><a href="https://github.com/Zanoshky/netglow-app/issues">Issues</a></li>
+    <li><a href="https://github.com/Zanoshky/netglow-app/blob/main/LICENSE">License</a></li>
+  </ul>
+  <p>Guide text and images are shared under CC BY 4.0. The Netglow app itself is proprietary. Made by Marko Zanoski.</p>
+  </div>
+</footer>
+</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Runbook · Netglow user guide</title>
+<meta name="description" content="Netglow problems and fixes: Wi-Fi name not shown, unknown devices, Shizuku, Firewall blocks, Pro not unlocked, refunds and the names file.">
+<meta name="theme-color" content="#000000">
+<meta property="og:title" content="Runbook · Netglow user guide">
+<meta property="og:description" content="Netglow problems and fixes: Wi-Fi name not shown, unknown devices, Shizuku, Firewall blocks, Pro not unlocked, refunds and the names file.">
+<meta property="og:image" content="img/network.webp">
+<link rel="icon" type="image/png" href="img/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <a class="brand" href="index.html"><img src="img/icon-192.png" alt="" width="30" height="30"><span>netglow</span></a>
+  <nav class="nav" aria-label="Guide pages"><ul><li><a href="index.html"><span class="ws" aria-hidden="true">1</span>home</a></li><li><a href="guide.html"><span class="ws" aria-hidden="true">2</span>guide</a></li><li><a href="cookbook.html"><span class="ws" aria-hidden="true">3</span>cookbook</a></li><li><a href="runbook.html" aria-current="page"><span class="ws" aria-hidden="true">4</span>runbook</a></li><li><a href="faq.html"><span class="ws" aria-hidden="true">5</span>faq</a></li><li><a href="report.html"><span class="ws" aria-hidden="true">6</span>report a bug</a></li></ul></nav>
+</header>
+<div class="wrap">
+<main id="main">
+
+<div class="eyebrow">~/runbook</div>
+<h1>Runbook</h1>
+<div class="underline" aria-hidden="true"></div>
+<p class="lede">Something not working? Find the symptom, see why, and follow the taps.</p>
+<div class="tiles"><section class="tile" id="ssid" aria-labelledby="ssid-h"><div class="title" aria-hidden="true">symptom</div><h2 id="ssid-h">The Wi-Fi name is not shown</h2>
+<p><b>Why:</b> Android gives the Wi-Fi name only to apps with precise location. It may be off, set to approximate, or not allowed. Scans still work.</p><p><b>Fix:</b></p><ol class="steps"><li>Open <code>Network</code> and tap <code>Show it</code> on <code>Show the Wi-Fi name?</code>. Or <code>Settings</code>, <code>Scanning</code>, <code>Show the Wi-Fi name</code>.</li><li>Allow precise location when Android asks.</li><li>If location is switched off on the phone, turn it on in Android settings.</li></ol>
+</section>
+<section class="tile" id="unknown" aria-labelledby="unknown-h"><div class="title" aria-hidden="true">symptom</div><h2 id="unknown-h">A device shows as Unknown</h2>
+<p><b>Why:</b> The device says nothing about itself, and Android no longer lets apps read its hardware address.</p><p><b>Fix:</b></p><ol class="steps"><li>Tap the device, then <code>Rename</code> and give it a name. The name stays.</li><li>To get makers, turn on <code>Shizuku mode</code> in <code>Settings</code>.</li></ol>
+</section>
+<section class="tile" id="makers" aria-labelledby="makers-h"><div class="title" aria-hidden="true">symptom</div><h2 id="makers-h">Makers are missing</h2>
+<p><b>Why:</b> Since Android 10 apps cannot read the hardware address that tells the maker.</p><p><b>Fix:</b></p><ol class="steps"><li>Open <code>Settings</code>, then <code>Shizuku mode</code>.</li><li>Tap <code>Get Shizuku</code>, then <code>Open Shizuku</code> to start it, then <code>Allow Netglow</code>.</li><li>Tap <code>Scan now</code>.</li></ol>
+</section>
+<section class="tile" id="missing" aria-labelledby="missing-h"><div class="title" aria-hidden="true">symptom</div><h2 id="missing-h">A device I know is not in the scan</h2>
+<p><b>Why:</b> It may be asleep, on a guest network, or behind a mesh or extender.</p><p><b>Fix:</b></p><ol class="steps"><li>Wake the device and tap <code>Scan</code> again.</li><li>Try <code>Settings</code>, <code>Scanning</code>, <code>How hard to scan</code>, <code>Thorough</code>.</li><li>Tap <code>See all</code>. Netglow keeps every device it ever saw, under <code>Away</code>.</li></ol>
+</section>
+<section class="tile" id="szreboot" aria-labelledby="szreboot-h"><div class="title" aria-hidden="true">symptom</div><h2 id="szreboot-h">Shizuku stopped after a reboot</h2>
+<p><b>Why:</b> Android stops Shizuku on every reboot, and Shizuku needs a start each time.</p><p><b>Fix:</b></p><ol class="steps"><li>Open <code>Settings</code>, then <code>Shizuku mode</code>.</li><li>Tap <code>Open Shizuku</code> and start it again.</li><li>If asked, tap <code>Allow Netglow</code>.</li></ol>
+</section>
+<section class="tile" id="szblock" aria-labelledby="szblock-h"><div class="title" aria-hidden="true">symptom</div><h2 id="szblock-h">A Shizuku block is gone after a reboot</h2>
+<p><b>Why:</b> Android drops these blocks on every reboot. Netglow sets them again as soon as Shizuku runs.</p><p><b>Fix:</b></p><ol class="steps"><li>Start Shizuku as above.</li><li>Open <code>Shizuku mode</code> and look at <code>Blocked with Shizuku</code>. <code>Cut off now</code> means it holds. <code>Waits for Shizuku</code> or <code>Not held now, open Shizuku</code> means Shizuku is not running yet.</li><li>Tap the app to check its page.</li></ol>
+</section>
+<section class="tile" id="vpn" aria-labelledby="vpn-h"><div class="title" aria-hidden="true">symptom</div><h2 id="vpn-h">A Firewall block does not hold, or another VPN runs</h2>
+<p><b>Why:</b> Android runs one VPN at a time. If another VPN is on, Firewall is off, and so are its blocks. Apps says "Another VPN may be on" or "Firewall is off".</p><p><b>Fix:</b></p><ol class="steps"><li>Turn off the other VPN.</li><li>Open <code>Apps</code> and tap <code>Open Firewall</code>, then turn Firewall on.</li><li>Check that Apps says <code>Live from Firewall</code>.</li></ol><p>To block with no VPN at all, use <a href="cookbook.html#szblock">Block with Shizuku</a> (Pro, Android 14 and up).</p>
+</section>
+<section class="tile" id="pro" aria-labelledby="pro-h"><div class="title" aria-hidden="true">symptom</div><h2 id="pro-h">Pro is not unlocked after paying</h2>
+<p><b>Why:</b> Google Play may still be confirming, or Netglow has not asked Play yet.</p><p><b>Fix:</b></p><ol class="steps"><li>Open <code>Settings</code>, then <code>See what Pro adds</code>.</li><li>Tap <code>Restore purchase</code>.</li><li>Use the same Google account that paid. A note says "Payment pending" while Play confirms. Check that Google Play is reachable and updated.</li></ol><p>Still stuck? <a href="report.html">Report it</a> with the order date.</p>
+</section>
+<section class="tile" id="refund" aria-labelledby="refund-h"><div class="title" aria-hidden="true">symptom</div><h2 id="refund-h">I want a refund</h2>
+<p>Refunds go through Google Play, which took the payment. Open your Google Play order history, find Netglow Pro and ask for the refund there. After a refund Pro locks again, and the free app keeps working.</p>
+</section>
+<section class="tile" id="folder" aria-labelledby="folder-h"><div class="title" aria-hidden="true">symptom</div><h2 id="folder-h">The names file folder lost access</h2>
+<p><b>Why:</b> The folder was moved, deleted or its permission taken back, so Netglow cannot write there.</p><p><b>Fix:</b></p><ol class="steps"><li>Open <code>Settings</code>, then <code>Device names file</code>.</li><li>Tap <code>Folder</code> and pick the folder again, or make a new one.</li><li>If names look missing, tap <code>Load a file</code> and pick devices.json.</li></ol><p>If Netglow says "That is not a Netglow names file", the file is not valid. A bad file is renamed devices.json.bad so nothing is overwritten.</p>
+</section>
+<section class="tile" id="cam" aria-labelledby="cam-h"><div class="title" aria-hidden="true">symptom</div><h2 id="cam-h">The camera check finds nothing in a hotel</h2>
+<p><b>Why:</b> Many hotels keep guests apart, so only the router answers.</p><p><b>Fix:</b></p><ol class="steps"><li>Read <code>What it cannot see</code> on <code>Cameras</code>.</li><li>Tap <code>Check nearby Wi-Fi too</code> to see camera hotspots.</li><li>Look around the room as well.</li></ol>
+</section>
+<section class="tile" id="watch" aria-labelledby="watch-h"><div class="title" aria-hidden="true">symptom</div><h2 id="watch-h">Background watch seems quiet</h2>
+<p><b>Why:</b> It runs only while the phone is on Wi-Fi, and Android may wait longer between checks while the phone sleeps. Notes need notification permission.</p><p><b>Fix:</b></p><ol class="steps"><li>Open <code>Settings</code>, <code>Background watch</code> and check that <code>Watch in the background</code> is on.</li><li>Check <code>How often</code>.</li><li>Allow notifications for Netglow in Android settings.</li></ol>
+</section>
+</div>
+</main>
+<footer>
+  <div class="tile quiet">
+  <ul>
+    <li><a href="https://play.google.com/store/apps/details?id=com.zanoshky.netglow">Google Play</a></li>
+    <li><a href="https://netglow.zanoski.com">netglow.zanoski.com</a></li>
+    <li><a href="https://github.com/Zanoshky/netglow-app/issues">Issues</a></li>
+    <li><a href="https://github.com/Zanoshky/netglow-app/blob/main/LICENSE">License</a></li>
+  </ul>
+  <p>Guide text and images are shared under CC BY 4.0. The Netglow app itself is proprietary. Made by Marko Zanoski.</p>
+  </div>
+</footer>
+</div>
+</body>
+</html>
