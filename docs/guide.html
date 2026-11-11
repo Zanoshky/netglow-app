@@ -53,7 +53,7 @@
 <dt>Rename</dt><dd>Give it your own name. Leave it empty to give back its own name.</dd>
 <dt>Open web page</dt><dd>Shown when the device has a web page port open.</dd>
 <dt>Ping, Ports</dt><dd>Start the Ping or Port check tool on this device.</dd>
-<dt>What it says about itself</dt><dd>Address, name on the network, maker and model, found by, hardware address and first seen. Since Android 10 apps cannot read the hardware address of other devices. Shizuku mode shows it. A private address is one the device made up for this network.</dd>
+<dt>What it says about itself</dt><dd>Address, name on the network, maker and model, found by, hardware address and first seen. Since Android 10 apps cannot read the hardware address of other devices. Shizuku mode (Pro) shows it. A private address is one the device made up for this network.</dd>
 <dt>Open ports</dt><dd>The ports that answered, with a plain note on what each is used for.</dd>
 <dt>Online, last 14 days</dt><dd>On which days it was seen.</dd>
 <dt>Names</dt><dd>Every rename you made, with the time. All of it is saved in devices.json.</dd>
@@ -143,14 +143,14 @@
 </section>
 <section class="tile" id="shizuku" aria-labelledby="shizuku-h"><div class="title" aria-hidden="true">09</div><h2 id="shizuku-h">Shizuku mode</h2>
 
-<p>Shizuku is a free app that gives other apps a few of the rights a computer cable has. Netglow uses it for two things Android keeps from normal apps. Open it from the <code>Shizuku mode</code> tile, or <code>Settings</code>, <code>Shizuku mode</code>.</p>
-<div class="pair"><figure><div class="phone"><img src="img/shizuku.webp" width="540" height="1200" loading="lazy" alt="The Shizuku mode page: what it adds (the maker of every device, free, and block an app with no VPN, Pro), a card saying Shizuku mode is on, a Scan now button and the list Blocked with Shizuku."></div><figcaption>The Shizuku mode page.</figcaption></figure></div>
+<p>Shizuku is a free app that gives other apps a few of the rights a computer cable has. Netglow uses it for two things Android keeps from normal apps, both part of Pro. Open it from the <code>Shizuku mode</code> tile, or <code>Settings</code>, <code>Shizuku mode</code>.</p>
+<div class="pair"><figure><div class="phone"><img src="img/shizuku.webp" width="540" height="1200" loading="lazy" alt="The Shizuku mode page: what it adds (the maker of every device and block an app with no VPN, both Pro), a card saying Shizuku mode is on, a Scan now button and the list Blocked with Shizuku."></div><figcaption>The Shizuku mode page.</figcaption></figure></div>
 <dl class="keys">
-<dt>The maker of every device</dt><dd>Free. Netglow reads each device's hardware address, so makers show, the camera check knows more, and devices that ignore ping are found too.</dd>
+<dt>The maker of every device</dt><dd>Pro. Netglow reads each device's hardware address, so makers show, the camera check knows more, and devices that ignore ping are found too.</dd>
 <dt>Block an app with no VPN</dt><dd>Pro, Android 14 and up. Android's own firewall cuts one app off, on Wi-Fi and mobile data, and Netglow reads it back to prove it.</dd>
 </dl>
 <h3>Turn it on</h3>
-<ol class="steps"><li>Tap <code>Get Shizuku</code> and install it.</li><li>Tap <code>Open Shizuku</code> and start it. Shizuku starts with wireless debugging, no computer needed.</li><li>Come back and tap <code>Allow Netglow</code>. The page says <code>Shizuku mode is on</code>. Tap <code>Scan now</code> to see makers.</li></ol>
+<ol class="steps"><li>Shizuku mode needs Pro. Without it the keys on the page open the Pro sheet first.</li><li>Tap <code>Get Shizuku</code> and install it.</li><li>Tap <code>Open Shizuku</code> and start it. Shizuku starts with wireless debugging, no computer needed.</li><li>Come back and tap <code>Allow Netglow</code>. The page says <code>Shizuku mode is on</code>. Tap <code>Scan now</code> to see makers.</li></ol>
 <p>Android stops Shizuku on every reboot, and drops the blocks too. Start Shizuku again after a reboot and Netglow sets the blocks again. The list <code>Blocked with Shizuku</code> shows each app as <code>Cut off now</code>, <code>Not held now, open Shizuku</code> or <code>Waits for Shizuku</code>. Everything stays on your phone.</p>
 
 </section>
@@ -176,6 +176,7 @@
 <li><b>History for good</b>: every scan and every day a device was online, not just 30 days.</li>
 <li><b>Several networks</b>: home, office and family, each with its own devices, to browse while you are away.</li>
 <li><b>Deep port check</b>: up to 1000 ports, or a range you type.</li>
+<li><b>Shizuku makers</b>: the maker of every device from its hardware address, and devices that ignore ping.</li>
 <li><b>Block with Shizuku</b>: cut one app off with no VPN, on Android 14 and up.</li>
 <li><b>Export</b>: your devices as CSV or JSON.</li>
 <li><b>Widget</b>: devices online and new ones on your home screen, with a Scan key.</li>
