@@ -25,7 +25,7 @@
 <h1>The guide</h1>
 <div class="underline" aria-hidden="true"></div>
 <p class="lede">Everything Netglow does, screen by screen. Words in <code>code</code> style are what you see in the app.</p>
-<div class="tiles"><nav class="tile toc" aria-labelledby="toc-h"><h2 id="toc-h">Contents</h2><ol><li><a href="#install"><span class="n">1</span>Install</a></li><li><a href="#network"><span class="n">2</span>The Network screen</a></li><li><a href="#device"><span class="n">3</span>A device</a></li><li><a href="#names"><span class="n">4</span>Names and the names file</a></li><li><a href="#cameras"><span class="n">5</span>Camera check</a></li><li><a href="#apps"><span class="n">6</span>Apps</a></li><li><a href="#tools"><span class="n">7</span>Tools</a></li><li><a href="#timeline"><span class="n">8</span>Timeline and history</a></li><li><a href="#shizuku"><span class="n">9</span>Shizuku mode</a></li><li><a href="#settings"><span class="n">10</span>Settings</a></li><li><a href="#pro"><span class="n">11</span>Netglow Pro</a></li><li><a href="#widget"><span class="n">12</span>The widget</a></li><li><a href="#privacy"><span class="n">13</span>Permissions and privacy</a></li></ol></nav></div><div class="tiles one"><section class="tile" id="install" aria-labelledby="install-h"><div class="title" aria-hidden="true">01</div><h2 id="install-h">Install</h2>
+<div class="tiles"><nav class="tile toc" aria-labelledby="toc-h"><h2 id="toc-h">Contents</h2><ol><li><a href="#install"><span class="n">1</span>Install</a></li><li><a href="#network"><span class="n">2</span>The Network screen</a></li><li><a href="#device"><span class="n">3</span>A device</a></li><li><a href="#names"><span class="n">4</span>Names and the names file</a></li><li><a href="#cameras"><span class="n">5</span>Camera check</a></li><li><a href="#apps"><span class="n">6</span>Apps</a></li><li><a href="#tools"><span class="n">7</span>Tools</a></li><li><a href="#security"><span class="n">8</span>Security</a></li><li><a href="#timeline"><span class="n">9</span>Timeline and history</a></li><li><a href="#shizuku"><span class="n">10</span>Shizuku mode</a></li><li><a href="#settings"><span class="n">11</span>Settings</a></li><li><a href="#pro"><span class="n">12</span>Netglow Pro</a></li><li><a href="#widget"><span class="n">13</span>The widget</a></li><li><a href="#privacy"><span class="n">14</span>Permissions and privacy</a></li></ol></nav></div><div class="tiles one"><section class="tile" id="install" aria-labelledby="install-h"><div class="title" aria-hidden="true">01</div><h2 id="install-h">Install</h2>
 <p>Get Netglow on <a href="https://play.google.com/store/apps/details?id=com.zanoshky.netglow">Google Play</a>. It runs on Android 10 or newer. Scans are free and unlimited, with no account and no ads. Words in <code>code</code> style are what you see in the app.</p><p>The bottom bar has five places: <code>Network</code>, <code>Cameras</code>, <code>Apps</code>, <code>Tools</code> and <code>Settings</code>.</p>
 </section>
 <section class="tile" id="network" aria-labelledby="network-h"><div class="title" aria-hidden="true">02</div><h2 id="network-h">The Network screen</h2>
@@ -36,7 +36,7 @@
 <p>The first scan of a network is the starting point. Only devices that join after it count as new.</p>
 <div class="pair"><figure><div class="phone"><img src="img/network.webp" width="540" height="1200" loading="lazy" alt="The Netglow Network screen after a scan: 5 devices now, 0 new today, 0 cameras, then the Everything Netglow does grid with Camera check, App traffic, Ping, Traceroute, Port check, DNS lookup, Wake on LAN, Wi-Fi channels, Network info and Router check, and the bottom bar Network, Cameras, Apps, Tools, Settings."></div><figcaption>The Network screen after a scan.</figcaption></figure></div>
 <h3>Everything Netglow does</h3>
-<p>Under the tiles is a grid with one tap to every feature: <code>Camera check</code>, <code>App traffic</code>, <code>Ping</code>, <code>Traceroute</code>, <code>Port check</code>, <code>DNS lookup</code>, <code>Wake on LAN</code>, <code>Wi-Fi channels</code>, <code>Network info</code>, <code>Router check</code>, <code>Names file</code>, <code>Timeline</code> and <code>Shizuku mode</code>.</p>
+<p>Under the tiles is a grid with one tap to every feature: <code>Camera check</code>, <code>App traffic</code>, <code>Ping</code>, <code>Traceroute</code>, <code>Port check</code>, <code>DNS lookup</code>, <code>Wake on LAN</code>, <code>Wi-Fi channels</code>, <code>Network info</code>, <code>Router check</code>, <code>Signal meter</code>, <code>Bluetooth</code>, <code>Security</code>, <code>Names file</code>, <code>Timeline</code> and <code>Shizuku mode</code>.</p>
 <h3>All devices</h3>
 <p>The list starts with this phone and the router. Tap the sort row to sort <code>By address</code>, <code>By name</code>, <code>By maker</code> or <code>By last seen</code>. <code>See all</code> opens the full list, with <code>Online now</code> and <code>Away</code>. Netglow keeps every device it ever saw.</p>
 <h3>A device is missing</h3>
@@ -123,13 +123,32 @@
 <dt>Port check</dt><dd>Which services a device offers: open, closed or no reply. Free checks the 40 most common ports. Pro checks up to 1000, or a range you type, like 192.168.1.1 22, 8000-8100.</dd>
 <dt>DNS lookup</dt><dd>What a name points to: A, AAAA, MX, TXT, CNAME and more.</dd>
 <dt>Wake on LAN</dt><dd>Turns on a computer that is set to wake from the network. Type its hardware address and tap Send.</dd>
-<dt>Wi-Fi channels</dt><dd>Which channels nearby Wi-Fi use, so you can pick a clear one. It needs location. Channels are set in the router.</dd>
-<dt>Network info</dt><dd>This phone's address, the router, DNS, band and signal.</dd>
-<dt>Router check</dt><dd>Its settings page, Telnet, UPnP and model, looked at from inside. Nothing is changed.</dd>
+<dt>Signal meter</dt><dd>Your Wi-Fi signal live, and the last minute as a line. Walk around the home and watch where it drops.</dd>
+<dt>Wi-Fi channels</dt><dd>Which channels nearby Wi-Fi use, and which one to move to. Netglow keeps its advice until another channel is clearly better. It needs location. Channels are set in the router.</dd>
+<dt>Network info</dt><dd>Opens with your Wi-Fi in plain words, then this phone's address, the router, DNS, band and signal.</dd>
+<dt>Router check</dt><dd>Its settings page, Telnet, UPnP and model, looked at from inside. Nothing is changed. Open router page takes you there, with steps for your router's maker to set a strong password.</dd>
+<dt>Bluetooth nearby (Pro)</dt><dd>A 20 second listen for earbuds, watches, tags and trackers around you, shown on a radar. A tracker that seems to move with you pulses red, AirTags and SmartTags among them, and so does an AirTag changed to hide from Apple's own alert. It asks for Nearby devices (location on Android 10 and 11). Nothing it hears is saved or sent.</dd>
+</dl>
+<p>The Port check also shows what each open service says about itself: a web server's name and page title, SSH and database versions, and router firmware.</p>
+
+</section>
+<section class="tile" id="security" aria-labelledby="security-h"><div class="title" aria-hidden="true">08</div><h2 id="security-h">Security</h2>
+
+<p>Open <code>Tools</code>, <code>Security</code>, or the Security tile on the Network screen. Netglow checks your own network and gives a score out of 100, with a plain fix for each risk. Below 70 the score turns red. What it finds is kept in memory only, never in the names file.</p>
+<dl class="keys">
+<dt>Security audit</dt><dd>Risky open ports on every device, like Telnet or an open database, each with a fix.</dd>
+<dt>Open to the internet</dt><dd>Which device opened which port on your router to the outside, through UPnP, and your public address. Read only.</dd>
+<dt>Wi-Fi security</dt><dd>Open, WEP, WPA2, WPA3 and WPS networks nearby, and look alikes of your own Wi-Fi.</dd>
+<dt>DNS check</dt><dd>Whether your router's name answers are honest: it compares them with 1.1.1.1 and 9.9.9.9, tries a made up name, and finds the resolver really used.</dd>
+<dt>Certificate check</dt><dd>Who issued a secure page, when it expires, and whether something in the middle swaps the certificates.</dd>
+<dt>No password check (Pro)</dt><dd>Camera streams, file shares, printers and other services that open for anyone. It never guesses passwords; it only sees whether a device lets anyone in with none.</dd>
+<dt>Spoof watch (Pro)</dt><dd>Warns when the router's hardware address changes, or two devices share one, which can mean someone sits in the middle. It needs Shizuku mode.</dd>
+<dt>Known flaws (Pro)</dt><dd>Your devices' makers and models matched against the public CVE list of NIST. Only maker and model are sent, after you confirm.</dd>
+<dt>Audit report (Pro)</dt><dd>Everything found, with the timeline, as a PDF or CSV file in a folder you pick.</dd>
 </dl>
 
 </section>
-<section class="tile" id="timeline" aria-labelledby="timeline-h"><div class="title" aria-hidden="true">08</div><h2 id="timeline-h">Timeline and history</h2>
+<section class="tile" id="timeline" aria-labelledby="timeline-h"><div class="title" aria-hidden="true">09</div><h2 id="timeline-h">Timeline and history</h2>
 
 <p>Open the <code>Timeline</code> tile on the Network screen, or <code>Settings</code>, <code>Watch and history</code>, <code>Timeline</code>.</p>
 <div class="pair"><figure><div class="phone"><img src="img/timeline.webp" width="540" height="1200" loading="lazy" alt="The Timeline page: a Watch in the background button, then Today, hour by hour, with a row of lit squares for the Router and three unknown devices, and a note that no one joined or left yet."></div><figcaption>Today, hour by hour.</figcaption></figure></div>
@@ -141,7 +160,7 @@
 </dl>
 
 </section>
-<section class="tile" id="shizuku" aria-labelledby="shizuku-h"><div class="title" aria-hidden="true">09</div><h2 id="shizuku-h">Shizuku mode</h2>
+<section class="tile" id="shizuku" aria-labelledby="shizuku-h"><div class="title" aria-hidden="true">10</div><h2 id="shizuku-h">Shizuku mode</h2>
 
 <p>Shizuku is a free app that gives other apps a few of the rights a computer cable has. Netglow uses it for two things Android keeps from normal apps, both part of Pro. Open it from the <code>Shizuku mode</code> tile, or <code>Settings</code>, <code>Shizuku mode</code>.</p>
 <div class="pair"><figure><div class="phone"><img src="img/shizuku.webp" width="540" height="1200" loading="lazy" alt="The Shizuku mode page: what it adds (the maker of every device and block an app with no VPN, both Pro), a card saying Shizuku mode is on, a Scan now button and the list Blocked with Shizuku."></div><figcaption>The Shizuku mode page.</figcaption></figure></div>
@@ -154,7 +173,7 @@
 <p>Android stops Shizuku on every reboot, and drops the blocks too. Start Shizuku again after a reboot and Netglow sets the blocks again. The list <code>Blocked with Shizuku</code> shows each app as <code>Cut off now</code>, <code>Not held now, open Shizuku</code> or <code>Waits for Shizuku</code>. Everything stays on your phone.</p>
 
 </section>
-<section class="tile" id="settings" aria-labelledby="settings-h"><div class="title" aria-hidden="true">10</div><h2 id="settings-h">Settings</h2>
+<section class="tile" id="settings" aria-labelledby="settings-h"><div class="title" aria-hidden="true">11</div><h2 id="settings-h">Settings</h2>
 
 <dl class="keys">
 <dt>Look</dt><dd>Theme: <code>Follow the phone</code>, <code>Light</code>, <code>Dark</code> or <code>Black</code>.</dd>
@@ -168,35 +187,39 @@
 </dl>
 
 </section>
-<section class="tile" id="pro" aria-labelledby="pro-h"><div class="title" aria-hidden="true">11</div><h2 id="pro-h">Netglow Pro</h2>
+<section class="tile" id="pro" aria-labelledby="pro-h"><div class="title" aria-hidden="true">12</div><h2 id="pro-h">Netglow Pro</h2>
 
 <p>Pro is optional, and never needed to scan. It is a one time payment on Google Play, with no subscription and no account. Every Pro extra that comes later is included. Google Play handles only the payment, and your device list never leaves the phone.</p>
 <ul class="dots">
 <li><b>Background watch</b>: a timeline of who joined and left, and a note when something new joins.</li>
+<li><b>Bluetooth nearby</b>: earbuds, watches, tags and trackers around you on a radar, with a warning for trackers that move with you.</li>
+<li><b>Security checks</b>: the no password check, spoof watch, known flaws and the audit report.</li>
 <li><b>History for good</b>: every scan and every day a device was online, not just 30 days.</li>
 <li><b>Several networks</b>: home, office and family, each with its own devices, to browse while you are away.</li>
 <li><b>Deep port check</b>: up to 1000 ports, or a range you type.</li>
+<li><b>Deep identify</b>: exact model names from the full device catalogue, and a read of each maker board's own page for its model, chip and address.</li>
 <li><b>Shizuku makers</b>: the maker of every device from its hardware address, and devices that ignore ping.</li>
 <li><b>Block with Shizuku</b>: cut one app off with no VPN, on Android 14 and up.</li>
 <li><b>Export</b>: your devices as CSV or JSON.</li>
 <li><b>Widget</b>: devices online and new ones on your home screen, with a Scan key.</li>
 </ul>
 <p>To buy it, open <code>Settings</code>, <code>See what Pro adds</code>, then <code>Get Pro</code>. If it does not unlock, tap <code>Restore purchase</code> on the same page, with the Google account that paid.</p>
-<p>Free stays free: scans, names, the names file, the camera check and every tool.</p>
+<p>Free stays free: scans, names, the names file, the camera check, the security audit and its free checks, the signal meter and every other tool.</p>
 
 </section>
-<section class="tile" id="widget" aria-labelledby="widget-h"><div class="title" aria-hidden="true">12</div><h2 id="widget-h">The widget</h2>
+<section class="tile" id="widget" aria-labelledby="widget-h"><div class="title" aria-hidden="true">13</div><h2 id="widget-h">The widget</h2>
 
 <p>The Netglow widget shows the Wi-Fi name, how many devices are online and how many are new, and when the last scan was, with a Scan key. It is part of Pro. Without Pro it says "The widget is part of Pro". Add it the way you add any widget: hold an empty spot on your home screen, tap Widgets, and pick Netglow.</p>
 
 </section>
-<section class="tile" id="privacy" aria-labelledby="privacy-h"><div class="title" aria-hidden="true">13</div><h2 id="privacy-h">Permissions and privacy</h2>
+<section class="tile" id="privacy" aria-labelledby="privacy-h"><div class="title" aria-hidden="true">14</div><h2 id="privacy-h">Permissions and privacy</h2>
 
-<p>Netglow has no server of its own. What it finds stays on your phone. It only asks devices to announce themselves. It never tries passwords, never looks for weak spots and never reads other devices' traffic. Use it on networks you own or may test.</p>
+<p>Netglow has no server of its own. What it finds stays on your phone. It asks devices to announce themselves and checks your own network for weak spots. It never guesses passwords and never reads other devices' traffic. A few checks talk to public services when you run them: the DNS check, the certificate check and, after you confirm, Known flaws. The <a href="https://netglow.zanoski.com/privacy">privacy policy</a> lists each one. Use it on networks you own or may test.</p>
 <dl class="keys">
 <dt>Network access, Network and Wi-Fi state</dt><dd>To scan the Wi-Fi you are on, and to run the tools on the addresses you give.</dd>
 <dt>Multicast</dt><dd>To hear the names devices announce (mDNS, UPnP, WS-Discovery).</dd>
-<dt>Location</dt><dd>Asked only when you open the Wi-Fi name or nearby Wi-Fi, after an explanation. Android requires it for the Wi-Fi name and for the Wi-Fi channels and camera hotspots around you. Your location is never read or kept. Everything else works if you say no.</dd>
+<dt>Location</dt><dd>Asked only when you open the Wi-Fi name or nearby Wi-Fi, after an explanation. Android requires it for the Wi-Fi name and for the Wi-Fi channels and camera hotspots around you, and on Android 10 and 11 for Bluetooth nearby. Your location is never read or kept. Everything else works if you say no.</dd>
+<dt>Nearby devices</dt><dd>Asked only when you open Bluetooth nearby (Pro), on Android 12 and up, marked as never used for location. What it hears stays on your phone.</dd>
 <dt>Nearby devices on your Wi-Fi</dt><dd>Newer Android asks before an app talks to devices on your own network.</dd>
 <dt>Notifications</dt><dd>For the note that a new device joined, if you turn it on.</dd>
 <dt>Run at startup</dt><dd>So Background watch (Pro) starts again after a restart.</dd>
