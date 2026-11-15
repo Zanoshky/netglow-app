@@ -46,6 +46,12 @@
 <section class="tile" id="szblock" aria-labelledby="szblock-h"><div class="title" aria-hidden="true">recipe</div><h2 id="szblock-h">Block an app with Shizuku (Pro)</h2>
 <ol class="steps"><li>Turn on Shizuku mode: <code>Settings</code>, <code>Shizuku mode</code>, then <code>Get Shizuku</code>, <code>Open Shizuku</code> and <code>Allow Netglow</code>.</li><li>Open <code>Apps</code> and tap the app.</li><li>Tap <code>Block with Shizuku</code>.</li><li>To undo, tap <code>Let it out again</code>.</li></ol><p>It needs Android 14 or newer. There is no VPN. After a reboot, start Shizuku again and Netglow sets the block again.</p>
 </section>
+<section class="tile" id="doors" aria-labelledby="doors-h"><div class="title" aria-hidden="true">recipe</div><h2 id="doors-h">See which apps listen on my Wi-Fi (Pro)</h2>
+<ol class="steps"><li>Turn on Shizuku mode as above.</li><li>Open <code>Tools</code>, then <code>Open doors</code> (marked <code>Shizuku required</code>).</li><li>Tap <code>Show open doors</code>.</li><li>Read <code>Listening on your Wi-Fi</code> for apps that take connections, and <code>Talking now</code> for who each app talks to.</li></ol><p>A red note marks a risky door, like wireless debugging on port 5555. Turn it off when you are done. No VPN is used.</p>
+</section>
+<section class="tile" id="announce" aria-labelledby="announce-h"><div class="title" aria-hidden="true">recipe</div><h2 id="announce-h">Hear what devices announce (Pro, root)</h2>
+<ol class="steps"><li>Start Shizuku or Sui as root on a rooted phone, and allow Netglow. Netglow never asks for root itself.</li><li>Open <code>Tools</code>, then <code>What devices announce</code> (marked <code>Root required</code>).</li><li>Tap <code>Listen for a minute</code>, then turn a device's Wi-Fi off and on.</li><li>Read its hardware address, maker, host name and system under <code>Heard</code>.</li></ol><p>Netglow only receives. It sends nothing. Scans use it too while Shizuku runs as root.</p>
+</section>
 <section class="tile" id="watch" aria-labelledby="watch-h"><div class="title" aria-hidden="true">recipe</div><h2 id="watch-h">Turn on Background watch (Pro)</h2>
 <ol class="steps"><li>Open <code>Settings</code>, then <code>Background watch</code>.</li><li>Turn on <code>Watch in the background</code>.</li><li>Tap <code>How often</code> to pick 15 minutes up to 6 hours, and keep <code>Note for new devices</code> on.</li></ol><p>Netglow checks only while the phone is on Wi-Fi. Allow notifications when Android asks.</p>
 </section>

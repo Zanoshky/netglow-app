@@ -32,8 +32,10 @@
 
 <p>This is home. At the top is the name of your Wi-Fi and a <code>Scan</code> key. While a scan runs the key becomes <code>Stop</code>.</p>
 <h3>Your first scan</h3>
-<ol class="steps"><li>Join the Wi-Fi you want to look at.</li><li>Tap <code>Scan</code>. Netglow asks each device for its name by ping, mDNS, UPnP, NetBIOS and ONVIF, all at once, in about 15 seconds. Nothing is sent until you tap it, and nothing leaves your Wi-Fi.</li><li>Read the three tiles: <code>Devices now</code>, <code>New today</code> and <code>Cameras</code>. Under them a line says how the devices were found, like "5 answered ping".</li></ol>
+<ol class="steps"><li>Join the Wi-Fi you want to look at.</li><li>Tap <code>Scan</code>. Netglow asks each device for its name by ping, mDNS, UPnP, NetBIOS and ONVIF, all at once, in about 15 seconds. It also pings all IPv6 devices at once, reads the name in each device's secure page certificate, and reads the maker from an IPv6 address that carries the hardware address. All of this is free. Nothing is sent until you tap it, and nothing leaves your Wi-Fi.</li><li>Read the three tiles: <code>Devices now</code>, <code>New today</code> and <code>Cameras</code>. Under them a line says how the devices were found, like "5 answered ping".</li></ol>
 <p>The first scan of a network is the starting point. Only devices that join after it count as new.</p>
+<h3>Android 17: allow Nearby devices first</h3>
+<p>Android 17 blocks apps from every device on your Wi-Fi until you allow <code>Nearby devices</code>. Netglow cannot work without it: a scan finds only this phone and the safety checks cannot run. Home says so first, with <code>Netglow cannot reach your Wi-Fi yet</code> and <code>Allow Nearby devices</code>. It is not for the Wi-Fi name and not for your location.</p>
 <div class="pair"><figure><div class="phone"><img src="img/network.webp" width="540" height="1200" loading="lazy" alt="The Netglow Network screen after a scan: 5 devices now, 0 new today, 0 cameras, then the Everything Netglow does grid with Camera check, App traffic, Ping, Traceroute, Port check, DNS lookup, Wake on LAN, Wi-Fi channels, Network info and Router check, and the bottom bar Network, Cameras, Apps, Tools, Settings."></div><figcaption>The Network screen after a scan.</figcaption></figure></div>
 <h3>Everything Netglow does</h3>
 <p>Under the tiles is a grid with one tap to every feature: <code>Camera check</code>, <code>App traffic</code>, <code>Ping</code>, <code>Traceroute</code>, <code>Port check</code>, <code>DNS lookup</code>, <code>Wake on LAN</code>, <code>Wi-Fi channels</code>, <code>Network info</code>, <code>Router check</code>, <code>Signal meter</code>, <code>Bluetooth</code>, <code>Security</code>, <code>Names file</code>, <code>Timeline</code> and <code>Shizuku mode</code>.</p>
@@ -56,7 +58,10 @@
 <dt>Rename</dt><dd>Give it your own name. Leave it empty to give back its own name.</dd>
 <dt>Open web page</dt><dd>Shown when the device has a web page port open.</dd>
 <dt>Ping, Ports</dt><dd>Start the Ping or Port check tool on this device.</dd>
-<dt>What it says about itself</dt><dd>Address, name on the network, maker and model, found by, hardware address and first seen. Since Android 10 apps cannot read the hardware address of other devices. Shizuku mode (Pro) shows it. A private address is one the device made up for this network.</dd>
+<dt>What it says about itself</dt><dd>Address, name on the network, maker and model, found by, hardware address and first seen. Since Android 10 apps cannot read the hardware address of other devices. Shizuku mode (Pro) shows it. A hardware address marked <code>(from its IPv6 address)</code> was read from an IPv6 address that carries it, free. A private address is one the device made up for this network.</dd>
+<dt>IPv6 address, Name in its certificate</dt><dd>The device's IPv6 address, and the name it puts in its secure page certificate (NAS, routers, printers). <code>IPv6 address (through Shizuku)</code> comes from the phone's IPv6 neighbour table (Pro).</dd>
+<dt>Answers</dt><dd><code>Only at the hardware level</code>: the device ignores ping and keeps every port shut, but it is on the Wi-Fi. Seen through Shizuku (Pro). The Network screen counts these devices.</dd>
+<dt>Announced as</dt><dd>What system the device runs, from the DHCP message it sent when it joined. Heard with root (Pro), see <a href="#shizuku">Shizuku mode</a>.</dd>
 <dt>What it is, and Did we get it right?</dt><dd>Tap the thumbs up to keep what Netglow found. Tap the thumbs down to pick what it really is, and type the maker if you like. Netglow keeps your answer on every scan and in devices.json; <code>Use what Netglow found</code> gives it back.</dd>
 <dt>Support and firmware</dt><dd>When the maker is known, opens the maker's own support page for updates and manuals.</dd>
 <dt>Open ports</dt><dd>The ports that answered, with a plain note on what each is used for.</dd>
@@ -134,6 +139,8 @@
 <dt>Wi-Fi channels</dt><dd>Which channels nearby Wi-Fi use, and which one to move to. Netglow keeps its advice until another channel is clearly better. It needs location. Channels are set in the router.</dd>
 <dt>Network info</dt><dd>Opens with your Wi-Fi in plain words, then this phone's address, the router, DNS, band and signal.</dd>
 <dt>Router check</dt><dd>Its settings page, Telnet, UPnP and model, looked at from inside. Nothing is changed. Open router page takes you there, with steps for your router's maker to set a strong password.</dd>
+<dt>Open doors (Pro)</dt><dd>Marked <code>Shizuku required</code>. Which apps on this phone take connections from your Wi-Fi, and who each app talks to right now, with no VPN. See <a href="#doors">Open doors</a>.</dd>
+<dt>What devices announce (Pro)</dt><dd>Marked <code>Root required</code>. Listens to what devices broadcast when they join. See <a href="#announce">What devices announce</a>.</dd>
 <dt>Bluetooth nearby (Pro)</dt><dd>A 20 second listen for earbuds, watches, tags and trackers around you, shown on a radar. A tracker that seems to move with you pulses red, AirTags and SmartTags among them, and so does an AirTag changed to hide from Apple's own alert. It asks for Nearby devices (location on Android 10 and 11). Nothing it hears is saved or sent.</dd>
 </dl>
 <p>The Port check also shows what each open service says about itself: a web server's name and page title, SSH and database versions, and router firmware.</p>
@@ -169,15 +176,28 @@
 </section>
 <section class="tile" id="shizuku" aria-labelledby="shizuku-h"><div class="title" aria-hidden="true">10</div><h2 id="shizuku-h">Shizuku mode</h2>
 
-<p>Shizuku is a free app that gives other apps a few of the rights a computer cable has. Netglow uses it for two things Android keeps from normal apps, both part of Pro. Open it from the <code>Shizuku mode</code> tile, or <code>Settings</code>, <code>Shizuku mode</code>.</p>
+<p>Shizuku is a free app that gives other apps a few of the rights a computer cable has. Netglow uses it for what Android keeps from normal apps: the phone's neighbour tables, its tables of open ports and connections, and a per app block. All of it is part of Pro. Tiles that need it are marked <code>Shizuku required</code>. Open it from the <code>Shizuku mode</code> tile, or <code>Settings</code>, <code>Shizuku mode</code>.</p>
 <div class="pair"><figure><div class="phone"><img src="img/shizuku.webp" width="540" height="1200" loading="lazy" alt="The Shizuku mode page: what it adds (the maker of every device and block an app with no VPN, both Pro), a card saying Shizuku mode is on, a Scan now button and the list Blocked with Shizuku."></div><figcaption>The Shizuku mode page.</figcaption></figure></div>
 <dl class="keys">
 <dt>The maker of every device</dt><dd>Pro. Netglow reads each device's hardware address, so makers show, the camera check knows more, and devices that ignore ping are found too.</dd>
+<dt>Silent devices</dt><dd>Pro. Devices that ignore ping and keep every port shut still answer at the hardware level, so they show up in the phone's neighbour table. They are marked <code>answers only at the hardware level</code> on the device page and counted on the Network screen.</dd>
+<dt>IPv6 neighbours</dt><dd>Pro. The IPv6 addresses of each device, with their hardware addresses, from the phone's IPv6 neighbour table, on the device page.</dd>
 <dt>Block an app with no VPN</dt><dd>Pro, Android 14 and up. Android's own firewall cuts one app off, on Wi-Fi and mobile data, and Netglow reads it back to prove it.</dd>
+<dt>Open doors</dt><dd>Pro. Which apps on this phone listen on your Wi-Fi, and who each app talks to now. See below.</dd>
+<dt>What devices announce</dt><dd>Pro, root only. See below.</dd>
 </dl>
 <h3>Turn it on</h3>
 <ol class="steps"><li>Shizuku mode needs Pro. Without it the keys on the page open the Pro sheet first.</li><li>Tap <code>Get Shizuku</code> and install it.</li><li>Tap <code>Open Shizuku</code> and start it. Shizuku starts with wireless debugging, no computer needed.</li><li>Come back and tap <code>Allow Netglow</code>. The page says <code>Shizuku mode is on</code>. Tap <code>Scan now</code> to see makers.</li></ol>
 <p>Android stops Shizuku on every reboot, and drops the blocks too. Start Shizuku again after a reboot and Netglow sets the blocks again. The list <code>Blocked with Shizuku</code> shows each app as <code>Cut off now</code>, <code>Not held now, open Shizuku</code> or <code>Waits for Shizuku</code>. Everything stays on your phone.</p>
+<h3 id="doors">Open doors</h3>
+<p>Open <code>Tools</code>, then <code>Open doors</code> in <code>Apps and nearby</code>. It reads Android's own tables (/proc/net) through Shizuku. Nothing leaves the phone.</p>
+<ol class="steps"><li>Turn on Shizuku mode as above.</li><li>Tap <code>Show open doors</code>. Without Pro this opens the Pro sheet first.</li><li><code>Listening on your Wi-Fi</code> lists each app that takes connections from your Wi-Fi, by name and port. Ports open to this phone alone are left out.</li><li><code>Talking now</code> lists who each app talks to. Netglow looks again every 2 seconds while the page is open.</li></ol>
+<p>A risky door gets a note in red. Wireless debugging on port 5555 means anyone on this Wi-Fi can try to control the phone, so turn it off when you are done. Telnet and FTP send passwords as plain text; file shares, screen sharing, proxies and open databases get a note too. Short connections, like most name lookups (DNS), can start and end between two looks, so some are missed. If the page says <code>Shizuku needed</code>, tap <code>Open Shizuku mode</code>.</p>
+<h3 id="announce">What devices announce (root)</h3>
+<p>Devices announce themselves when they join the Wi-Fi or renew their address. With root, Netglow listens to those DHCP and ARP messages and shows each device's hardware address, maker, host name and what system it runs. It only receives. It sends nothing. Scans use it too while Shizuku runs as root, for better names and makers.</p>
+<ol class="steps"><li>This needs Pro and Shizuku or Sui started as root, on a rooted phone. Netglow never asks for root itself. If Shizuku runs without root, the page says <code>Needs root</code>.</li><li>Open <code>Tools</code>, then <code>What devices announce</code>, marked <code>Root required</code>.</li><li>Tap <code>Listen for a minute</code>.</li><li>Turn a device's Wi-Fi off and on to hear it announce itself. Each one shows under <code>Heard</code>, with <code>Wants</code> an address (a DHCP request) or <code>At</code> an address (heard over ARP).</li></ol>
+<h3>What Shizuku and root cannot do</h3>
+<p>Netglow cannot see other devices' traffic, with or without root. It does not record their traffic, never pretends to be your router to pull it through the phone (ARP spoofing), and runs no VPN of its own. With root it hears only what devices broadcast to everyone.</p>
 
 </section>
 <section class="tile" id="settings" aria-labelledby="settings-h"><div class="title" aria-hidden="true">11</div><h2 id="settings-h">Settings</h2>
@@ -207,13 +227,16 @@
 <li><b>Several networks</b>: home, office and family, each with its own devices, to browse while you are away.</li>
 <li><b>Deep port check</b>: up to 1000 ports, or a range you type.</li>
 <li><b>Deep identify</b>: exact model names from the full device catalogue, and a read of each maker board's own page for its model, chip and address.</li>
-<li><b>Shizuku makers</b>: the maker of every device from its hardware address, and devices that ignore ping.</li>
+<li><b>Shizuku makers</b>: the maker of every device from its hardware address. Shizuku required.</li>
+<li><b>Silent devices and IPv6</b>: devices that answer only at the hardware level, and the IPv6 addresses of each device. Shizuku required.</li>
 <li><b>Block with Shizuku</b>: cut one app off with no VPN, on Android 14 and up.</li>
+<li><b>Open doors</b>: which apps on this phone listen on your Wi-Fi, and who each app talks to now, with no VPN. Shizuku required.</li>
+<li><b>What devices announce</b>: names, makers and systems from what devices broadcast when they join. Root required: Shizuku or Sui running as root. Netglow only listens.</li>
 <li><b>Export</b>: a CSV for a sheet, or a copy of the names file saved wherever you like. The free devices.json already keeps your names.</li>
 <li><b>Widget</b>: devices online and new ones on your home screen, with a Scan key.</li>
 </ul>
 <p>To buy it, open <code>Settings</code>, <code>See what Pro adds</code>, then <code>Get Pro</code>. If it does not unlock, tap <code>Restore purchase</code> on the same page, with the Google account that paid.</p>
-<p>Free stays free: scans, names, the names file, the camera check, the security audit and its free checks, the signal meter and every other tool.</p>
+<p>Free stays free: scans with the IPv6 ping, certificate names and makers from IPv6 addresses, names, the names file, the camera check, the security audit and its free checks, the signal meter and every other tool.</p>
 
 </section>
 <section class="tile" id="widget" aria-labelledby="widget-h"><div class="title" aria-hidden="true">13</div><h2 id="widget-h">The widget</h2>
@@ -229,11 +252,12 @@
 <dt>Multicast</dt><dd>To hear the names devices announce (mDNS, UPnP, WS-Discovery).</dd>
 <dt>Location</dt><dd>Asked only when you open the Wi-Fi name or nearby Wi-Fi, after an explanation. Android requires it for the Wi-Fi name and for the Wi-Fi channels and camera hotspots around you, and on Android 10 and 11 for Bluetooth nearby. Your location is never read or kept. Everything else works if you say no.</dd>
 <dt>Nearby devices</dt><dd>Asked only when you open Bluetooth nearby (Pro), on Android 12 and up, marked as never used for location. What it hears stays on your phone.</dd>
-<dt>Nearby devices on your Wi-Fi</dt><dd>Newer Android asks before an app talks to devices on your own network.</dd>
+<dt>Nearby devices on your Wi-Fi</dt><dd>On Android 17 and up, Android blocks apps from every device on your own network until you allow it. Netglow cannot work without it. Home asks for it first. It is not for your location.</dd>
 <dt>Notifications</dt><dd>For the note that a new device joined, if you turn it on.</dd>
 <dt>Run at startup</dt><dd>So Background watch (Pro) starts again after a restart.</dd>
 <dt>Usage access</dt><dd>Optional, on the Apps page only, for data used per app.</dd>
-<dt>Shizuku</dt><dd>Optional, only if you install Shizuku and allow Netglow.</dd>
+<dt>Shizuku</dt><dd>Optional, only if you install Shizuku and allow Netglow (Pro). It reads the phone's neighbour tables, and for Open doors the phone's own tables of open ports and connections. Nothing it reads leaves your phone.</dd>
+<dt>Root</dt><dd>Never asked for. If Shizuku or Sui already runs as root, What devices announce (Pro) receives the broadcasts devices send on your Wi-Fi when they join. It sends nothing, and what it hears stays on your phone.</dd>
 </dl>
 <p>Never asked for: contacts, messages, photos, the microphone, the camera and your accounts. The full policy is at <a href="https://netglow.zanoski.com/privacy">netglow.zanoski.com/privacy</a>.</p>
 
