@@ -46,12 +46,12 @@
 <h3>Android 17: allow Nearby devices first</h3>
 <p>Android 17 blocks apps from every device on your Wi-Fi until you allow <code>Nearby devices</code>. Netglow cannot work without it: a scan finds only this phone and the safety checks cannot run. Home says so first, with <code>Netglow cannot reach your Wi-Fi yet</code> and <code>Allow Nearby devices</code>. It is not for the Wi-Fi name and not for your location.</p>
 <div class="pair"><figure><div class="phone"><img src="img/network.webp" width="540" height="1200" loading="lazy" alt="The Netglow Home screen after a scan, in the black look: the name of the Wi-Fi and 18 devices scanned just now, Scan and Settings keys, then the cards Who is here, Is it safe with a score of 87 of 100, Is it fast with 309 Mbps, and Timeline today, with the bottom bar Home, Devices, Safety and Tools."></div><figcaption>The Home screen after a scan.</figcaption></figure></div>
-<h3>Everything Netglow does</h3>
-<p>Under the tiles is a grid with one tap to every feature: <code>Camera check</code>, <code>App traffic</code>, <code>Ping</code>, <code>Traceroute</code>, <code>Port check</code>, <code>DNS lookup</code>, <code>Wake on LAN</code>, <code>Wi-Fi channels</code>, <code>Network info</code>, <code>Router check</code>, <code>Signal meter</code>, <code>Bluetooth</code>, <code>Security</code>, <code>Names file</code>, <code>Timeline</code> and <code>Shizuku mode</code>.</p>
+<h3>The four places</h3>
+<p><code>Home</code> asks three questions, <code>Who is here</code>, <code>Is it safe</code> and <code>Is it fast</code>, and shows <code>Timeline today</code>. <code>Devices</code> is the full list. <code>Safety</code> is the score and every check. <code>Tools</code> holds every tool, in groups: <code>Checks</code>, <code>Network</code>, <code>Speed and Wi-Fi</code>, <code>Apps and nearby</code> and <code>Your data</code>, with <code>Find a tool</code> on top.</p>
 <h3>People</h3>
-<p>Tap <code>People</code> in the grid. Add the people in your household and tick their phones, or tap a suggestion: Netglow spots names like <code>iPhone-von-Lena</code>. Each person shows with a dot, green when home, and how long ago. Once someone is added, <code>Home now</code> shows on the Home screen. It stays on your phone and in devices.json. Meant for your own household: tell the people you add.</p>
-<h3>All devices</h3>
-<p>The list starts with this phone and the router. Tap the sort row to sort <code>By address</code>, <code>By name</code>, <code>By maker</code> or <code>By last seen</code>. <code>See all</code> opens the full list, with <code>Online now</code> and <code>Away</code>. Netglow keeps every device it ever saw.</p>
+<p>Open <code>Tools</code>, <code>Apps and nearby</code>, <code>People</code>. Add the people in your household and tick their phones, or tap a suggestion: Netglow spots names like <code>iPhone-von-Lena</code>. Each person shows with a dot, green when home, and how long ago. Once someone is added, <code>Home now</code> shows on the Home screen. It stays on your phone and in devices.json. Meant for your own household: tell the people you add.</p>
+<h3>The Devices tab</h3>
+<p>Open <code>Devices</code> in the bottom bar. Search by name, maker, model or address, and pick a chip: <code>All</code>, <code>New</code>, <code>Online</code> or <code>Cameras</code>, each with its count. Devices come in groups by kind, online first, and the ones away are dimmed after them. Tap the sort row to sort <code>By address</code>, <code>By name</code>, <code>By maker</code> or <code>By last seen</code>. Netglow keeps every device it ever saw.</p>
 <h3>A device is missing</h3>
 <p>Tap <code>Why a device may be missing</code>. Phones and tablets sleep with the screen off, so wake one and scan again. Guest networks and most hotel Wi-Fi keep devices apart, so only the router answers. Mesh systems and extenders can hide devices for a moment. Devices on a cable behind another router are on another network.</p>
 <h3>The Wi-Fi name</h3>
@@ -102,7 +102,7 @@
 </section>
 <section class="tile" id="cameras" aria-labelledby="cameras-h"><div class="title" aria-hidden="true">06</div><h2 id="cameras-h">Camera check</h2>
 
-<p>Open <code>Cameras</code> in the bottom bar and tap <code>Check again</code>. The check is one check among others. It is good for a holiday rental or a hotel Wi-Fi, but it never promises to find every camera.</p>
+<p>Open <code>Tools</code>, <code>Checks</code>, <code>Camera check</code> and tap <code>Check again</code>. The check is one check among others. It is good for a holiday rental or a hotel Wi-Fi, but it never promises to find every camera.</p>
 <div class="pair"><figure><div class="phone"><img src="img/cameras.webp" width="540" height="1200" loading="lazy" alt="The Cameras page: 5 possible cameras, 6 of 12 checks flagged, and the list On this Wi-Fi with Front door camera and Tapo C200, each with the reason it was flagged."></div><figcaption>The camera check says why each device was flagged.</figcaption></figure></div>
 <h3>What it looks at</h3>
 <ul class="dots"><li>Devices that answer as a camera (ONVIF, HomeKit camera, UPnP camera).</li><li>Video ports: RTSP 554 and 8554, RTMP 1935, and the ports of Hikvision, Dahua, Xiongmai and Tuya.</li><li>Camera makers in what a device says about itself.</li><li>Nearby Wi-Fi made by a camera maker or named like a camera (IPC, HDcam, CAM). This needs location, and the page offers <code>Check nearby Wi-Fi too</code>.</li></ul>
@@ -116,7 +116,7 @@
 </section>
 <section class="tile" id="apps" aria-labelledby="apps-h"><div class="title" aria-hidden="true">07</div><h2 id="apps-h">Apps</h2>
 
-<p>Open <code>Tools</code>, then <code>Apps</code> to see what the apps on this phone are doing on the network. Netglow runs no VPN of its own. It works with Firewall, our free firewall app, because Android lets only one app run a firewall at a time.</p>
+<p>Open <code>Tools</code>, then <code>Apps</code> under <code>Apps and nearby</code>, to see what the apps on this phone are doing on the network. Netglow runs no VPN of its own. It works with Firewall, our free firewall app, because Android lets only one app run a firewall at a time.</p>
 <dl class="keys">
 <dt>Get Firewall on Play</dt><dd>Shown until Firewall is installed.</dd>
 <dt>Live from Firewall</dt><dd>Firewall is running. Blocks hold, and each app's connections show live.</dd>
@@ -137,7 +137,7 @@
 </section>
 <section class="tile" id="tools" aria-labelledby="tools-h"><div class="title" aria-hidden="true">08</div><h2 id="tools-h">Tools</h2>
 
-<p>Open <code>Tools</code>, or tap a tile in the grid on the Home screen. Each tool runs on this phone. Type a name or an address, or start one from a device's page.</p>
+<p>Open <code>Tools</code>. Each tool runs on this phone. Type a name or an address, or start one from a device's page.</p>
 <div class="pair"><figure><div class="phone"><img src="img/tools.webp" width="540" height="1200" loading="lazy" alt="The Tools tab: a Find a tool box and tiles under Checks: Camera check, Security audit, Open to the internet, No password check (Pro), Wi-Fi security, Spoof watch (Pro), DNS check, Certificate check, Known flaws (Pro) and Audit report (Pro)."></div><figcaption>The Tools tab. Pro tools carry a Pro tag; tiles that need Shizuku or root say so in a bar along the bottom of the tile.</figcaption></figure></div>
 <div class="pair"><figure><div class="phone"><img src="img/signal.webp" width="540" height="1200" loading="lazy" alt="The Signal meter: a gauge reading minus 50 dBm, excellent, on AndroidWifi at 2.4 GHz channel 6, with ticks for video calls, 4K streaming, gaming and browsing and a chart of the last 60 seconds."></div><figcaption>The Signal meter: walk around and watch where your Wi-Fi fades.</figcaption></figure></div>
 <dl class="keys">
@@ -160,7 +160,7 @@
 </section>
 <section class="tile" id="security" aria-labelledby="security-h"><div class="title" aria-hidden="true">09</div><h2 id="security-h">Security</h2>
 
-<p>Open <code>Tools</code>, <code>Security</code>, or the Security tile on the Home screen. Netglow checks your own network and gives a score out of 100, with a plain fix for each risk. Below 70 the score turns red. What it finds is kept in memory only, never in the names file.</p>
+<p>Open <code>Safety</code> in the bottom bar, or <code>Tools</code>, <code>Checks</code>. Netglow checks your own network and gives a score out of 100, with a plain fix for each risk. Below 70 the score turns red. What it finds is kept in memory only, never in the names file.</p>
 <div class="pair"><figure><div class="phone"><img src="img/safety.webp" width="540" height="1200" loading="lazy" alt="The Security audit page: a score of 87 of 100 called Fair, one thing to fix, and the finding Old Windows file sharing (NetBIOS) is open with how to fix it."></div><figcaption>The Security audit: a score and a plain fix for each risk.</figcaption></figure></div>
 <dl class="keys">
 <dt>Security audit</dt><dd>Risky open ports on every device, like Telnet or an open database, each with a fix.</dd>
@@ -177,7 +177,7 @@
 </section>
 <section class="tile" id="timeline" aria-labelledby="timeline-h"><div class="title" aria-hidden="true">10</div><h2 id="timeline-h">Timeline and history</h2>
 
-<p>Open the <code>Timeline</code> tile on the Home screen, or <code>Settings</code>, <code>Watch and history</code>, <code>Timeline</code>.</p>
+<p>Open <code>Timeline today</code> on Home, or <code>Tools</code>, <code>Your data</code>, <code>Timeline</code>, or <code>Settings</code>, <code>Watch and history</code>, <code>Timeline</code>.</p>
 <div class="pair"><figure><div class="phone"><img src="img/timeline.webp" width="540" height="1200" loading="lazy" alt="The Timeline page with Pro: a day picker, a card Today on Home Wi-Fi with 8 moments (1 new, 4 joined, 1 left, 1 warning), an hour by hour chart, a Watch in the background key and a filter row."></div><figcaption>Today, hour by hour.</figcaption></figure></div>
 <p>It shows who joined your Wi-Fi and who left. <code>Today, hour by hour</code> lights the hours each device was here, from midnight on the left to 11 at night on the right. A device that misses two scans in a row, 20 minutes apart at least, counts as left. A leave shows the last time the device answered.</p>
 <dl class="keys">
@@ -190,7 +190,7 @@
 <section class="tile" id="shizuku" aria-labelledby="shizuku-h"><div class="title" aria-hidden="true">11</div><h2 id="shizuku-h">Shizuku mode</h2>
 
 <p>Shizuku is a free app that gives other apps a few of the rights a computer cable has. Netglow uses it for what Android keeps from normal apps: the phone's neighbour tables, its tables of open ports and connections, and a per app block. All of it is part of Pro. Tiles that need it are marked <code>Shizuku required</code>. Open it from the <code>Shizuku mode</code> tile, or <code>Settings</code>, <code>Shizuku mode</code>.</p>
-<div class="pair"><figure><div class="phone"><img src="img/shizuku.webp" width="540" height="1200" loading="lazy" alt="The Shizuku mode page: what it adds (the maker of every device and block an app with no VPN, both Pro), a card saying Shizuku mode is on, a Scan now button and the list Blocked with Shizuku."></div><figcaption>The Shizuku mode page.</figcaption></figure></div>
+<div class="pair"><figure><div class="phone"><img src="img/shizuku.webp" width="540" height="1200" loading="lazy" alt="The Shizuku mode page in the black look: what it adds, as a list of the maker of every device, silent devices, IPv6 neighbours, block an app with no VPN, Open doors and What devices announce, each marked Pro."></div><figcaption>The Shizuku mode page.</figcaption></figure></div>
 <dl class="keys">
 <dt>The maker of every device</dt><dd>Pro. Netglow reads each device's hardware address, so makers show, the camera check knows more, and devices that ignore ping are found too.</dd>
 <dt>Silent devices</dt><dd>Pro. Devices that ignore ping and keep every port shut still answer at the hardware level, so they show up in the phone's neighbour table. They are marked <code>answers only at the hardware level</code> on the device page and counted on the Home screen.</dd>
