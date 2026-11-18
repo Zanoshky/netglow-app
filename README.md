@@ -7,7 +7,7 @@
 <p align="center">See who is on your Wi-Fi, give devices names that stay, and run a camera check that tells you what it cannot see.</p>
 
 <p align="center">
-  <a href="https://play.google.com/store/apps/details?id=com.zanoshky.netglow"><b>Google Play</b></a> ·
+  <a href="https://play.google.com/store/apps/details?id=com.zanoshky.netglow&referrer=utm_source%3Dgithub-guide%26utm_medium%3Ddocs%26utm_campaign%3Dnetglow-2026-11"><b>Google Play</b></a> ·
   <a href="https://netglow.zanoski.com"><b>netglow.zanoski.com</b></a> ·
   <a href="https://zanoshky.github.io/netglow-app/"><b>User guide</b></a> ·
   <a href="https://github.com/Zanoshky/netglow-app/issues/new/choose"><b>Report a bug</b></a>
