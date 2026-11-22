@@ -43,6 +43,9 @@
 <section class="tile" id="missing" aria-labelledby="missing-h"><div class="title" aria-hidden="true">symptom</div><h2 id="missing-h">A device I know is not in the scan</h2>
 <p><b>Why:</b> It may be asleep, on a guest network, or behind a mesh or extender.</p><p><b>Fix:</b></p><ol class="steps"><li>Wake the device and tap <code>Scan</code> again.</li><li>Try <code>Settings</code>, <code>Scanning</code>, <code>How hard to scan</code>, <code>Thorough</code>.</li><li>Tap <code>See all</code>. Netglow keeps every device it ever saw, under <code>Away</code>.</li></ol>
 </section>
+<section class="tile" id="jstop" aria-labelledby="jstop-h"><div class="title" aria-hidden="true">symptom</div><h2 id="jstop-h">The Forensic journal stopped recording</h2>
+<p><b>Why:</b> The subscription ended or lapsed. Since 1.57, Netglow asks Google Play again in every background round and stops the journal and its small notice when Play says the subscription is no longer active. Versions before 1.57 could keep listening until you opened the app.</p><p><b>Fix:</b></p><ol class="steps"><li>Open the Forensic journal page. If it offers the subscription, subscribe again, or tap <code>Restore</code> with the Google account that paid.</li><li>Check <code>Settings</code>, <code>Background watch</code>, <code>How often</code> is on 1, 3 or 5 minutes.</li><li>What was recorded before stays on the phone.</li></ol>
+</section>
 <section class="tile" id="szreboot" aria-labelledby="szreboot-h"><div class="title" aria-hidden="true">symptom</div><h2 id="szreboot-h">Shizuku stopped after a reboot</h2>
 <p><b>Why:</b> Android stops Shizuku on every reboot, and Shizuku needs a start each time.</p><p><b>Fix:</b></p><ol class="steps"><li>Open <code>Settings</code>, then <code>Shizuku mode</code>.</li><li>Tap <code>Open Shizuku</code> and start it again.</li><li>If asked, tap <code>Allow Netglow</code>.</li></ol>
 </section>
