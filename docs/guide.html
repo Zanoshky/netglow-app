@@ -72,6 +72,7 @@
 <dt>IPv6 address, Name in its certificate</dt><dd>The device's IPv6 address, and the name it puts in its secure page certificate (NAS, routers, printers). <code>IPv6 address (through Shizuku)</code> comes from the phone's IPv6 neighbour table (Pro).</dd>
 <dt>Answers</dt><dd><code>Only at the hardware level</code>: the device ignores ping and keeps every port shut, but it is on the Wi-Fi. Seen through Shizuku (Pro). The Home screen counts these devices.</dd>
 <dt>Announced as</dt><dd>What system the device runs, from the DHCP message it sent when it joined. Heard with root (Pro), see <a href="#shizuku">Shizuku mode</a>.</dd>
+<dt>How sure it is</dt><dd>Under <code>What it is</code> a chip says how sure Netglow is: <code>Sure</code> when the device told Netglow its own model or you said what it is, <code>Likely</code> when it rests on the maker or on a name the device announced, and <code>A guess</code> when it rests only on how the device answers on the network. The line beside it says why.</dd>
 <dt>What it is, and Did we get it right?</dt><dd>Tap the thumbs up to keep what Netglow found. Tap the thumbs down to pick what it really is, and type the maker if you like. Netglow keeps your answer on every scan and in devices.json; <code>Use what Netglow found</code> gives it back.</dd>
 <dt>Support and firmware</dt><dd>When the maker is known, opens the maker's own support page for updates and manuals.</dd>
 <dt>Open ports</dt><dd>The ports that answered, with a plain note on what each is used for.</dd>
@@ -157,6 +158,9 @@
 <dt>What devices announce (Pro)</dt><dd>Marked <code>Root required</code>. Listens to what devices broadcast when they join. See <a href="#announce">What devices announce</a>.</dd>
 <dt>Bluetooth nearby (Pro)</dt><dd>A 20 second listen for earbuds, watches, tags and trackers around you, shown on a radar. A tracker that seems to move with you pulses red, AirTags and SmartTags among them, and so does an AirTag changed to hide from Apple's own alert. It asks for Nearby devices (location on Android 10 and 11). Nothing it hears is saved or sent.</dd>
 <dt>Find it</dt><dd>Open a Bluetooth device in Bluetooth nearby, such as lost earbuds, and tap Find it. Netglow locks on that one device and shows warmer, colder or holding steady, with a ping that gets faster and higher as you get closer. Walk slowly and hold the phone in front of you. Tap Find the direction, hold the phone flat and turn on the spot, and an arrow points to where the signal was strongest. Walls bounce the signal, so keep watching the words. A phone with no compass sensor shows only warmer and colder. If the device sends nothing for 20 seconds, a message says so and Back to nearby list takes you back. Earbuds must be out of their case, or in a case with the lid open. Find it is open first to people with the Insider subscription.</dd>
+<dt>Cell around you (Pro)</dt><dd>The mobile cells your phone hears, on a radar: your cell first with its real frequency, band, channel and signal, any cell it joins on top (such as a 5G cell on a 4G one) and the neighbours the modem lists. It needs the location permission and no root. It lists only cells the modem already knows, so it is not a spectrum scan and a quiet list proves nothing about what else transmits nearby. Shizuku adds nothing here, because the modem only reports what it knows.</dd>
+<dt>Radio around you (Pro)</dt><dd>One 12 second look at the Wi-Fi networks and Bluetooth devices around you, on one radar: the stronger, the nearer the middle. The few worth a look come first, each with a <code>Sure</code> or <code>Likely</code> chip: a Wi-Fi from a camera maker, an open Wi-Fi, a tracker. With Pro you can save a clean baseline of Wi-Fi hardware addresses and see what is new next time. Bluetooth is left out of that comparison, because Bluetooth addresses change on purpose. It hears only Wi-Fi and Bluetooth: not 433 or 868 MHz devices, mobile transmitters, analog video, or a camera that only records to a card.</dd>
+<dt>Follow one Wi-Fi</dt><dd>In Wi-Fi channels, tap <code>Follow</code> on a network and walk around. Every fresh scan adds a point to a trail, the newest the brightest, and the page says stronger, weaker, steady or signal lost. Android allows a fresh scan about every 30 seconds, so walk slowly.</dd>
 </dl>
 <p>The Port check also shows what each open service says about itself: a web server's name and page title, SSH and database versions, and router firmware.</p>
 
@@ -166,7 +170,7 @@
 <p>Open <code>Safety</code> in the bottom bar, or <code>Tools</code>, <code>Checks</code>. Tap <code>Check now</code> at the top right; the shield turns while the checks run. Netglow shows how many checks passed (for example 44/47), in groups: <code>Your Wi-Fi</code>, <code>Name lookups</code>, <code>Secure connections</code>, <code>Fake router</code>, <code>Devices and router</code>, <code>Over time</code> and <code>Open doors on devices</code>. Each group has small pills (<code>3 of 4 passed</code>, <code>1 found</code>, <code>1 not sure</code>, <code>2 not run yet</code>); tap a check to open its page with the detail and the fix. A check says <code>Not sure</code> when it could not tell, which is never a pass. What it finds is kept in memory only, never in the names file.</p>
 <div class="pair"><figure><div class="phone"><img src="img/safety.webp" width="540" height="1200" loading="lazy" alt="The Security audit page: a score of 87 of 100 called Fair, one thing to fix, and the finding Old Windows file sharing (NetBIOS) is open with how to fix it."></div><figcaption>The Security audit: a score and a plain fix for each risk.</figcaption></figure></div>
 <dl class="keys">
-<dt>Security audit</dt><dd>30 checks over 67 ports on every device: remote control (Telnet, Remote Desktop, VNC, debugging), file sharing (SMB, NFS, FTP), databases, Docker and Kubernetes, cameras, printers, router management, plain text mail, web management pages and proxies. A failed check names the devices and each risk comes with a fix.</dd>
+<dt>Security audit</dt><dd>30 checks over 67 ports on every device: remote control (Telnet, Remote Desktop, VNC, debugging), file sharing (SMB, NFS, FTP), databases, Docker and Kubernetes, cameras, printers, router management, plain text mail, web management pages and proxies. A failed check names the devices, shows its title as the question it asked (for example <code>Android debugging is closed (ADB)?</code>) and each risk comes with a fix. A device that answered nothing on any port gets its own line and is never counted as clean, because nothing is known about it. An open door is what the knock found, not a verdict: how risky it is depends on the device and your network. If a VPN catches the knocks and nothing answers, the audit says so, and Home says your VPN may be catching the checks.</dd>
 <dt>Open to the internet</dt><dd>Which device opened which port on your router to the outside, through UPnP, and your public address. Read only.</dd>
 <dt>Wi-Fi security</dt><dd>Your own Wi-Fi with its lock, band and live signal, open, WEP, WPA2, WPA3 and WPS networks nearby, and look alikes of your own Wi-Fi. Both bands of one router count as yours.</dd>
 <dt>DNS check</dt><dd>Whether your router's name answers are honest: it compares them with 1.1.1.1 and 9.9.9.9, tries a made up name, and finds the resolver really used.</dd>
@@ -227,6 +231,8 @@
 <dt>Privacy</dt><dd>Each permission, and why.</dd>
 <dt>Pro</dt><dd><code>See what Pro adds</code>, the unlock and <code>Restore purchase</code>.</dd>
 <dt>Help and feedback</dt><dd>This user guide, report a bug, and <code>Why a device may be missing</code>.</dd>
+<dt>Self check</dt><dd>Netglow looks at its own setup and says in plain words what could stop it from working: Wi-Fi, the Wi-Fi name and nearby Wi-Fi, the internet, the last scan (a week old or more is flagged), notifications, battery saving, Shizuku and the Firewall bridge. Each row has a tick, a ! or a ?. <code>Copy result</code> puts it on the clipboard for a support mail. It holds no network name, address or device, and nothing leaves your phone.</dd>
+<dt>Add to Quick Settings</dt><dd>Under <code>Add the widget</code>. Android asks you to confirm; before Android 13 the page shows the manual way.</dd>
 </dl>
 
 </section>
@@ -238,6 +244,8 @@
 <li><b>Notifications</b>: a note when a new device, a camera or a trust warning shows up, with <code>It is mine</code> on the note, and quiet at night. Settings, <code>Notifications</code>, also sends a test.</li>
 <li><b>Who is home</b>: on the People page, when each person was home, hour by hour, as a heatmap for today, yesterday and the last 7 days.</li>
 <li><b>Bluetooth nearby</b>: earbuds, watches, tags and trackers around you on a radar, with a warning for trackers that move with you.</li>
+<li><b>Cell around you</b> and <b>Radio around you</b>: the mobile cells your phone hears, and Wi-Fi and Bluetooth on one radar.</li>
+<li><b>Quick Settings tile</b>: Background watch on or off from the swipe down panel.</li>
 <li><b>Security checks</b>: the no password check, spoof watch, known flaws and the audit report.</li>
 <li><b>History for good</b>: every scan, the timeline and every day a device was online, not just 30 days. Your names and renames are kept for good free.</li>
 <li><b>Several networks</b>: home, office and family, each with its own devices, to browse while you are away.</li>
@@ -257,7 +265,9 @@
 </section>
 <section class="tile" id="widget" aria-labelledby="widget-h"><div class="title" aria-hidden="true">14</div><h2 id="widget-h">The widget</h2>
 
-<p>The Netglow widget shows the Wi-Fi name, how many devices are online and how many are new, and when the last scan was, with a Scan key. It is part of Pro. Without Pro it says "The widget is part of Pro". Add it from Settings, Add the widget, or the way you add any widget: hold an empty spot on your home screen, tap Widgets, and pick Netglow.</p>
+<p>The Netglow widget draws a ring: the devices online, with an amber arc for the new ones, the Wi-Fi name, when the last scan was, and a Scan key. It is part of Pro. Without Pro it says "The widget is part of Pro". Add it from Settings, Add the widget, or the way you add any widget: hold an empty spot on your home screen, tap Widgets, and pick Netglow.</p>
+<h3>The Quick Settings tile</h3>
+<p>The <code>Netglow watch</code> tile turns Background watch (Pro) on or off from the swipe down panel, and says <code>On, every 15 minutes</code> or <code>Off</code> under its name. Without Pro it says <code>Off · Pro</code> and a tap opens the Pro page. From a locked phone, turning the watch off waits for the unlock. Add it from Settings, <code>Add to Quick Settings</code>.</p>
 
 </section>
 <section class="tile" id="privacy" aria-labelledby="privacy-h"><div class="title" aria-hidden="true">15</div><h2 id="privacy-h">Permissions and privacy</h2>
@@ -266,7 +276,7 @@
 <dl class="keys">
 <dt>Network access, Network and Wi-Fi state</dt><dd>To scan the Wi-Fi you are on, and to run the tools on the addresses you give.</dd>
 <dt>Multicast</dt><dd>To hear the names devices announce (mDNS, UPnP, WS-Discovery).</dd>
-<dt>Location</dt><dd>Asked only when you open the Wi-Fi name or nearby Wi-Fi, after an explanation. Android requires it for the Wi-Fi name and for the Wi-Fi channels and camera hotspots around you, and on Android 10 and 11 for Bluetooth nearby. Your location is never read or kept. Everything else works if you say no.</dd>
+<dt>Location</dt><dd>Asked only when you open the Wi-Fi name, nearby Wi-Fi or Cell around you (Pro), after an explanation. Android requires it for the Wi-Fi name, for the Wi-Fi channels and camera hotspots around you and for the mobile cells your phone hears, and on Android 10 and 11 for Bluetooth nearby and Radio around you. Your location is never read or kept. Everything else works if you say no.</dd>
 <dt>Nearby devices</dt><dd>Asked only when you open Bluetooth nearby (Pro), on Android 12 and up, marked as never used for location. What it hears stays on your phone.</dd>
 <dt>Nearby devices on your Wi-Fi</dt><dd>On Android 17 and up, Android blocks apps from every device on your own network until you allow it. Netglow cannot work without it. Home asks for it first. It is not for your location.</dd>
 <dt>Notifications</dt><dd>For the note that a new device joined, if you turn it on.</dd>
